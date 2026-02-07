@@ -2,7 +2,7 @@ import { updateSession } from "@/lib/supabase/proxy";
 import { type NextRequest, NextResponse } from "next/server";
 import { authRateLimiter } from "@/lib/rate-limit";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   // Rate limit auth endpoints
   if (
     request.nextUrl.pathname.startsWith("/auth/login") ||
