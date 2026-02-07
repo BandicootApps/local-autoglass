@@ -40,6 +40,19 @@ export function SignUpForm({
     }
 
     try {
+      // Check if email exists in the users table (allowlist)
+      const { data: allowedUser, error: lookupError } = await supabase
+        .from("users")
+        .select("email")
+        .eq("email", email.toLowerCase().trim())
+        .single();
+
+      if (lookupError || !allowedUser) {
+        throw new Error(
+          "This email is not authorized to sign up. Please contact an administrator."
+        );
+      }
+
       const { error } = await supabase.auth.signUp({
         email,
         password,
