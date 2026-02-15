@@ -53,7 +53,7 @@ export function StatsBar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 reveal">
           <div className="flex flex-col items-center justify-center text-center">
-            <span className="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums" data-target="20">0</span>
+            <span className="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums" data-target="35">0</span>
             <span className="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">Years Experience +</span>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
@@ -61,7 +61,7 @@ export function StatsBar() {
             <span className="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">% Mobile Service</span>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
-            <span className="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums" data-target="45">0</span>
+            <span className="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums" data-target="15">0</span>
             <span className="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">Mins Install Time</span>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
