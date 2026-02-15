@@ -57,6 +57,9 @@ export async function updateSession(request: NextRequest) {
     "/blog",
     "/login",
     "/auth",
+    "/sitemap.xml",
+    "/robots.txt",
+    "/google102c6ec44c5b8598.html",
   ];
 
   const isPublicRoute = publicRoutes.some(
