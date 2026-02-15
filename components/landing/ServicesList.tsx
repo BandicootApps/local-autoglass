@@ -26,7 +26,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">All Makes &amp; Models</h4>
-                  <p className="text-zinc-500 text-sm font-light">No matter the brand or year.</p>
+                  <p className="text-zinc-400 text-sm font-light">No matter the brand or year.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -35,7 +35,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Certified Glass</h4>
-                  <p className="text-zinc-500 text-sm font-light">Meets Australian Standards and OEM specs.</p>
+                  <p className="text-zinc-400 text-sm font-light">Meets Australian Standards and OEM specs.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -44,7 +44,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Fast Turnaround</h4>
-                  <p className="text-zinc-500 text-sm font-light">Done in one to two hours at your location.</p>
+                  <p className="text-zinc-400 text-sm font-light">Done in one to two hours at your location.</p>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">On-Site Service</h4>
-                  <p className="text-zinc-500 text-sm font-light">No need to transport heavy equipment.</p>
+                  <p className="text-zinc-400 text-sm font-light">No need to transport heavy equipment.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -110,7 +110,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Flexible Scheduling</h4>
-                  <p className="text-zinc-500 text-sm font-light">Before hours, after hours, or weekends.</p>
+                  <p className="text-zinc-400 text-sm font-light">Before hours, after hours, or weekends.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -119,7 +119,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Wide Vehicle Range</h4>
-                  <p className="text-zinc-500 text-sm font-light">Trucks, buses, tractors, excavators, forklifts, and more.</p>
+                  <p className="text-zinc-400 text-sm font-light">Trucks, buses, tractors, excavators, forklifts, and more.</p>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Safety Critical</h4>
-                  <p className="text-zinc-500 text-sm font-light">Braking, lane keeping, and cruise control all rely on accurate calibration.</p>
+                  <p className="text-zinc-400 text-sm font-light">Braking, lane keeping, and cruise control all rely on accurate calibration.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -161,7 +161,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Professional Equipment</h4>
-                  <p className="text-zinc-500 text-sm font-light">Industry-approved tools meeting manufacturer standards.</p>
+                  <p className="text-zinc-400 text-sm font-light">Industry-approved tools meeting manufacturer standards.</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -170,7 +170,7 @@ export function ServicesList() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">No Surprises</h4>
-                  <p className="text-zinc-500 text-sm font-light">If calibration is needed, we'll include it in your quote upfront.</p>
+                  <p className="text-zinc-400 text-sm font-light">If calibration is needed, we'll include it in your quote upfront.</p>
                 </div>
               </div>
             </div>

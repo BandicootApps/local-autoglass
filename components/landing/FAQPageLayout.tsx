@@ -20,7 +20,7 @@ export function FAQPageLayout({ children }: FAQPageLayoutProps) {
               <h1 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">
                 Frequently Asked Questions
               </h1>
-              <p className="text-lg text-zinc-500 font-light max-w-2xl mx-auto">
+              <p className="text-lg text-zinc-400 font-light max-w-2xl mx-auto">
                 Find answers to common questions about our windscreen replacement services, pricing, and warranty.
               </p>
             </div>

@@ -24,7 +24,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       >
         <span className="text-lg font-medium text-white pr-4">{question}</span>
         <ChevronDown
-          className={`w-5 h-5 text-zinc-500 flex-shrink-0 transition-transform duration-300 ${
+          className={`w-5 h-5 text-zinc-400 flex-shrink-0 transition-transform duration-300 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -96,7 +96,7 @@ export function LocationPage({ location }: LocationPageProps) {
                     <MapPin className="w-6 h-6 text-brand-500" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-500 uppercase tracking-wide">Distance</p>
+                    <p className="text-sm text-zinc-400 uppercase tracking-wide">Distance</p>
                     <p className="text-lg text-white font-medium">{location.distanceFromBase}</p>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export function LocationPage({ location }: LocationPageProps) {
                     <Users className="w-6 h-6 text-brand-500" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-500 uppercase tracking-wide">Population</p>
+                    <p className="text-sm text-zinc-400 uppercase tracking-wide">Population</p>
                     <p className="text-lg text-white font-medium">{location.population}</p>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export function LocationPage({ location }: LocationPageProps) {
                     <Clock className="w-6 h-6 text-brand-500" />
                   </div>
                   <div>
-                    <p className="text-sm text-zinc-500 uppercase tracking-wide">Service</p>
+                    <p className="text-sm text-zinc-400 uppercase tracking-wide">Service</p>
                     <p className="text-lg text-white font-medium">Same Day Available</p>
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export function LocationPage({ location }: LocationPageProps) {
                   <h3 className="text-xl font-semibold text-white mb-4">
                     Areas We Cover in {location.name}
                   </h3>
-                  <p className="text-sm text-zinc-500 mb-6">
+                  <p className="text-sm text-zinc-400 mb-6">
                     We come to you in all of these suburbs and surrounding areas
                   </p>
                   <div className="grid grid-cols-2 gap-3">
@@ -287,7 +287,7 @@ export function LocationPage({ location }: LocationPageProps) {
                           <h3 className="text-xl font-semibold text-white group-hover:text-brand-400 transition-colors">
                             {loc.name}
                           </h3>
-                          <p className="text-sm text-zinc-500 mt-1">{loc.distanceFromBase}</p>
+                          <p className="text-sm text-zinc-400 mt-1">{loc.distanceFromBase}</p>
                         </div>
                         <ArrowRight className="w-5 h-5 text-zinc-600 group-hover:text-brand-500 group-hover:translate-x-1 transition-all" />
                       </div>
@@ -301,13 +301,14 @@ export function LocationPage({ location }: LocationPageProps) {
           {/* CTA Section */}
           <section className="relative py-32 bg-zinc-900 overflow-hidden">
             <div className="absolute inset-0">
-              <Image
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2083&auto=format&fit=crop"
-                className="object-cover opacity-30 grayscale"
-                alt={`Windscreen replacement service in ${location.name}`}
-                fill
-                sizes="100vw"
-              />
+                <Image
+                  src="/Background-Image.webp"
+                  className="object-cover opacity-30 grayscale"
+                  alt={`Windscreen replacement service in ${location.name}`}
+                  fill
+                  priority
+                  sizes="100vw"
+                />
               <div className="absolute inset-0 bg-dark-950/80" />
             </div>
             <div className="relative z-10 max-w-4xl mx-auto text-center px-6 reveal">

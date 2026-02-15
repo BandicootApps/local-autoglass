@@ -52,7 +52,7 @@ export function FAQSection() {
             <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-zinc-500 font-light">
+            <p className="text-lg text-zinc-400 font-light">
               Answers to common questions about your windscreen replacement.
             </p>
           </div>
@@ -67,7 +67,7 @@ export function FAQSection() {
               ))
             ) : faqs.length === 0 ? (
               // Empty state
-              <div className="py-6 text-center text-zinc-500">
+              <div className="py-6 text-center text-zinc-400">
                 <p>No FAQs available at the moment.</p>
               </div>
             ) : (
@@ -87,7 +87,7 @@ export function FAQSection() {
                     <div className={`w-8 h-8 flex items-center justify-center rounded-full transition-all ${
                       activeIndex === index 
                         ? 'bg-brand-500 text-white' 
-                        : 'bg-white/5 group-hover:bg-white/10 text-zinc-500 group-hover:text-white'
+                        : 'bg-white/5 group-hover:bg-white/10 text-zinc-400 group-hover:text-white'
                     }`}>
                       <Plus 
                         className={`w-5 h-5 transition-transform duration-300 ${activeIndex === index ? 'rotate-45' : ''}`}
@@ -98,7 +98,7 @@ export function FAQSection() {
                     className="overflow-hidden transition-all duration-500 ease-in-out"
                     style={{ maxHeight: activeIndex === index ? '500px' : '0' }}
                   >
-                    <div className="pb-6 text-zinc-500 font-light leading-relaxed pr-8 whitespace-pre-wrap">
+                    <div className="pb-6 text-zinc-400 font-light leading-relaxed pr-8 whitespace-pre-wrap">
                       {faq.answer}
                     </div>
                   </div>

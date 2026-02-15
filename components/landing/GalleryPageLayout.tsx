@@ -20,7 +20,7 @@ export function GalleryPageLayout({ children }: GalleryPageLayoutProps) {
               <h1 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">
                 Our Recent Work
               </h1>
-              <p className="text-lg text-zinc-500 font-light max-w-2xl mx-auto">
+              <p className="text-lg text-zinc-400 font-light max-w-2xl mx-auto">
                 Browse through our gallery of windscreen replacements and repairs. We take pride in our quality workmanship and attention to detail.
               </p>
             </div>

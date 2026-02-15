@@ -17,7 +17,7 @@ function GalleryItem({ job }: { job: GalleryJob }) {
             <h3 className="text-2xl font-semibold text-white tracking-tight">
               {job.header}
             </h3>
-            <span className="text-sm font-medium text-zinc-500 bg-white/5 px-3 py-1 rounded-full border border-white/5 w-fit">
+            <span className="text-sm font-medium text-zinc-400 bg-white/5 px-3 py-1 rounded-full border border-white/5 w-fit">
               {new Date(job.created_at).toLocaleDateString("en-AU", {
                 year: "numeric",
                 month: "long",
@@ -65,10 +65,10 @@ export function PublicGalleryList({ jobs }: PublicGalleryListProps) {
     return (
       <div className="text-center py-20">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 mb-6">
-          <ImageIcon className="w-8 h-8 text-zinc-500" />
+          <ImageIcon className="w-8 h-8 text-zinc-400" />
         </div>
         <h3 className="text-xl font-medium text-white mb-2">Gallery Coming Soon</h3>
-        <p className="text-zinc-500 max-w-md mx-auto">
+        <p className="text-zinc-400 max-w-md mx-auto">
           We are currently updating our gallery with our latest work. Please check back soon.
         </p>
       </div>

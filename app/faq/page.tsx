@@ -43,7 +43,7 @@ async function FAQContent() {
 
   if (!faqs || faqs.length === 0) {
     return (
-      <div className="text-center py-12 text-zinc-500">
+      <div className="text-center py-12 text-zinc-400">
         <p>No FAQs available at the moment.</p>
       </div>
     );

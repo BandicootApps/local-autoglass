@@ -39,7 +39,7 @@ export function ServiceArea() {
                       </h4>
                       <ArrowRight className="w-4 h-4 text-zinc-600 group-hover:text-brand-500 group-hover:translate-x-1 transition-all flex-shrink-0" />
                     </div>
-                    <p className="text-sm text-zinc-500 mt-1">{location.tagline}</p>
+                    <p className="text-sm text-zinc-400 mt-1">{location.tagline}</p>
                   </div>
                 </div>
               </Link>

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { X, ZoomIn, Search } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export interface Photo {
   id: string;
@@ -26,10 +27,10 @@ export function PhotosGrid({ photos }: PhotosGridProps) {
     return (
       <div className="text-center py-20">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 mb-6">
-          <Search className="w-8 h-8 text-zinc-500" />
+          <Search className="w-8 h-8 text-zinc-400" />
         </div>
         <h3 className="text-xl font-medium text-white mb-2">No Photos Yet</h3>
-        <p className="text-zinc-500 max-w-md mx-auto">
+        <p className="text-zinc-400 max-w-md mx-auto">
           We are currently updating our gallery. Please check back soon.
         </p>
       </div>
@@ -89,6 +90,11 @@ export function PhotosGrid({ photos }: PhotosGridProps) {
       {/* Lightbox */}
       <Dialog open={!!selectedPhoto} onOpenChange={() => setSelectedPhoto(null)}>
         <DialogContent className="[&>button]:hidden max-w-[95vw] md:max-w-[90vw] h-[90vh] p-0 border-none bg-transparent shadow-none overflow-hidden">
+          <VisuallyHidden>
+            <DialogTitle>
+              {selectedPhoto?.category || "Photo"} - Gallery Image
+            </DialogTitle>
+          </VisuallyHidden>
           <div className="relative w-full h-full flex items-center justify-center bg-transparent">
             <button 
               onClick={() => setSelectedPhoto(null)}

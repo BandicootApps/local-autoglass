@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/data/locations';
+import { createClient } from '@/lib/supabase/server';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://localautoglass.com.au';
+  const supabase = await createClient();
 
   // Generate location page entries
   const locationPages: MetadataRoute.Sitemap = locations.map((location) => ({
@@ -10,6 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.85,
+  }));
+
+  // Fetch active blog posts for sitemap
+  const { data: blogs } = await supabase
+    .from('gallery_jobs')
+    .select('id, updated_at, created_at')
+    .eq('active', true);
+
+  const blogPages: MetadataRoute.Sitemap = (blogs || []).map((blog) => ({
+    url: `${baseUrl}/blog/${blog.id}`,
+    lastModified: new Date(blog.updated_at || blog.created_at),
+    changeFrequency: 'weekly',
+    priority: 0.8,
   }));
 
   return [
@@ -38,5 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...blogPages,
   ];
 }

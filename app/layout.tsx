@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   formatDetection: {
     email: false,
     address: false,
-    telephone: false,
+    telephone: true,
   },
   openGraph: {
     type: "website",
@@ -156,6 +156,13 @@ const localBusinessSchema = {
   serviceArea: {
     "@type": "AdministrativeArea",
     name: "Northern Rivers, NSW",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "85",
+    bestRating: "5",
+    worstRating: "1"
   },
   priceRange: "$$",
   image: `${baseUrl}/og-image.jpg`,

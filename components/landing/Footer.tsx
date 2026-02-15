@@ -14,7 +14,7 @@ export function Footer() {
                 LOCAL AUTOGLASS
               </span>
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-6 font-light">
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-light">
               Owned and operated by a local family. Reliable, affordable, and hassle-free windscreen replacements across the Northern Rivers.
             </p>
             <div className="flex items-center gap-3">
@@ -38,20 +38,28 @@ export function Footer() {
               </a>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-12 md:gap-24">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-16">
             <div>
               <h4 className="text-white font-medium mb-6">Quick Links</h4>
-              <ul className="space-y-4 text-sm text-zinc-500 font-light">
+              <ul className="space-y-4 text-sm text-zinc-400 font-light">
                 <li><Link href="/" className="hover:text-brand-500 transition-colors">Home</Link></li>
                 <li><Link href="/services" className="hover:text-brand-500 transition-colors">Services</Link></li>
                 <li><Link href="/faq" className="hover:text-brand-500 transition-colors">FAQ</Link></li>
-                <li><Link href="/photos" className="hover:text-brand-500 transition-colors">Gallery</Link></li>
-                <li><Link href="/gallery" className="hover:text-brand-500 transition-colors">Blog</Link></li>
+                <li><Link href="/gallery" className="hover:text-brand-500 transition-colors">Recent Work</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-white font-medium mb-6">Service Areas</h4>
+              <ul className="space-y-4 text-sm text-zinc-400 font-light">
+                <li><Link href="/services/lismore" className="hover:text-brand-500 transition-colors">Lismore</Link></li>
+                <li><Link href="/services/ballina" className="hover:text-brand-500 transition-colors">Ballina</Link></li>
+                <li><Link href="/services/byron-bay" className="hover:text-brand-500 transition-colors">Byron Bay</Link></li>
+                <li><Link href="/services/alstonville" className="hover:text-brand-500 transition-colors">Alstonville</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-medium mb-6">Contact</h4>
-              <ul className="space-y-4 text-sm text-zinc-500 font-light">
+              <ul className="space-y-4 text-sm text-zinc-400 font-light">
                 <li className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-brand-500" />
                   <a href="tel:0466140195" className="text-white hover:text-brand-500">0466 140 195</a>
@@ -72,7 +80,7 @@ export function Footer() {
           <p className="text-zinc-600 text-xs font-light">
             © <CurrentYear /> Local Auto Glass. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-end items-center gap-4 text-xs text-zinc-500 font-light">
+          <div className="flex flex-wrap justify-center md:justify-end items-center gap-4 text-xs text-zinc-400 font-light">
             <div className="flex items-center gap-1.5 px-3 py-1 bg-zinc-900 rounded-full border border-white/5">
               <BadgeCheck className="w-3.5 h-3.5 text-brand-500" />
               <span>MVRL63433</span>

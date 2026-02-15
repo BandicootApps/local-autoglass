@@ -64,11 +64,11 @@ export function PublicFAQList({ faqs }: PublicFAQListProps) {
     <div className="space-y-8">
       <div className="relative max-w-lg mx-auto">
         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <Search className="h-5 w-5 text-zinc-500" />
+          <Search className="h-5 w-5 text-zinc-400" />
         </div>
         <input
           type="text"
-          className="w-full bg-white/5 border border-white/10 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50 transition-all"
+          className="w-full bg-white/5 border border-white/10 rounded-full py-3 pl-12 pr-4 text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500/50 transition-all"
           placeholder="Search for a question..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
@@ -77,7 +77,7 @@ export function PublicFAQList({ faqs }: PublicFAQListProps) {
 
       <div className="flex flex-col border-t border-b border-white/5 divide-y divide-white/5">
         {filteredFaqs.length === 0 ? (
-          <div className="py-12 text-center text-zinc-500">
+          <div className="py-12 text-center text-zinc-400">
             <p>No questions found matching your search.</p>
           </div>
         ) : (
@@ -96,7 +96,7 @@ export function PublicFAQList({ faqs }: PublicFAQListProps) {
                 <div className={`w-8 h-8 flex items-center justify-center rounded-full transition-all ${
                   activeIndex === index 
                     ? 'bg-brand-500 text-white' 
-                    : 'bg-white/5 group-hover:bg-white/10 text-zinc-500 group-hover:text-white'
+                    : 'bg-white/5 group-hover:bg-white/10 text-zinc-400 group-hover:text-white'
                 }`}>
                   <Plus 
                     className={`w-5 h-5 transition-transform duration-300 ${activeIndex === index ? 'rotate-45' : ''}`}
@@ -107,7 +107,7 @@ export function PublicFAQList({ faqs }: PublicFAQListProps) {
                 className="overflow-hidden transition-all duration-500 ease-in-out"
                 style={{ maxHeight: activeIndex === index ? '500px' : '0' }}
               >
-                <div className="pb-6 text-zinc-500 font-light leading-relaxed pr-8 whitespace-pre-wrap">
+                <div className="pb-6 text-zinc-400 font-light leading-relaxed pr-8 whitespace-pre-wrap">
                   {faq.answer}
                 </div>
               </div>

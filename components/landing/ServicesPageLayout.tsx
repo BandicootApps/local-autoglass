@@ -20,7 +20,7 @@ export function ServicesPageLayout({ children }: ServicesPageLayoutProps) {
               <h1 className="text-4xl md:text-5xl font-semibold text-white tracking-tight">
                 Our Services
               </h1>
-              <p className="text-lg text-zinc-500 font-light max-w-2xl mx-auto">
+              <p className="text-lg text-zinc-400 font-light max-w-2xl mx-auto">
                 Professional, on-site windscreen replacement for cars, trucks, tractors, and heavy machinery. We come to you — no workshop visit needed.
               </p>
             </div>

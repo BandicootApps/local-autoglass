@@ -4,7 +4,7 @@ export function ServicesTicker() {
   return (
     <section className="py-10 bg-black/20 backdrop-blur-md border-b border-white/5 overflow-hidden z-20 relative">
       <div className="max-w-7xl mx-auto px-6 mb-6 text-center reveal">
-        <span className="text-xs font-semibold tracking-widest text-zinc-500 uppercase">
+        <span className="text-xs font-semibold tracking-widest text-zinc-400 uppercase">
           Vehicles We Service
         </span>
       </div>

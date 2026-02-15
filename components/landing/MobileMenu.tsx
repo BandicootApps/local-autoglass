@@ -41,7 +41,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           <span className="text-lg font-medium text-zinc-300 tracking-tight group-hover:text-white transition-colors">Gallery</span>
         </Link>
 
-        <Link href="/gallery" onClick={onClose} className="mobile-link group w-full max-w-xs mb-4 relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-500/30 backdrop-blur-md py-4 px-6 text-center transition-all duration-300">
+        <Link href="/blog" onClick={onClose} className="mobile-link group w-full max-w-xs mb-4 relative overflow-hidden rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-500/30 backdrop-blur-md py-4 px-6 text-center transition-all duration-300">
           <span className="text-lg font-medium text-zinc-300 tracking-tight group-hover:text-white transition-colors">Blog</span>
         </Link>
 

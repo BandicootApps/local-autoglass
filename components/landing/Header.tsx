@@ -44,7 +44,7 @@ export function Header({ onMobileMenuToggle }: HeaderProps) {
           <Link href="/services" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Services</Link>
           <Link href="/faq" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">FAQ</Link>
           <Link href="/photos" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Gallery</Link>
-          <Link href="/gallery" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Blog</Link>
+          <Link href="/blog" className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Blog</Link>
         </nav>
         
         <a href="tel:0466140195" className="hidden md:flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all group shadow-lg shadow-brand-500/20">
