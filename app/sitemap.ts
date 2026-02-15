@@ -19,18 +19,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }));
 
-  // Fetch active blog posts for sitemap
-  const { data: blogs } = await supabase
-    .from('gallery_jobs')
-    .select('id, updated_at, created_at')
-    .eq('active', true);
+  // Fetch active blog posts for sitemap (with error handling)
+  let blogPages: MetadataRoute.Sitemap = [];
+  try {
+    const { data: blogs } = await supabase
+      .from('gallery_jobs')
+      .select('id, updated_at, created_at')
+      .eq('active', true);
 
-  const blogPages: MetadataRoute.Sitemap = (blogs || []).map((blog) => ({
-    url: `${baseUrl}/blog/${blog.id}`,
-    lastModified: new Date(blog.updated_at || blog.created_at),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }));
+    blogPages = (blogs || []).map((blog) => ({
+      url: `${baseUrl}/blog/${blog.id}`,
+      lastModified: new Date(blog.updated_at || blog.created_at),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
+  } catch {
+    // If Supabase query fails (e.g. rate limit), still return static pages
+    console.error('Failed to fetch blog posts for sitemap');
+  }
 
   return [
     {
