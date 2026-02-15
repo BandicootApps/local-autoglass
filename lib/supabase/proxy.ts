@@ -53,6 +53,8 @@ export async function updateSession(request: NextRequest) {
     "/services",
     "/faq",
     "/gallery",
+    "/photos",
+    "/blog",
     "/login",
     "/auth",
   ];
