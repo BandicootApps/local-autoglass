@@ -196,7 +196,7 @@ export function GalleryImagesTable({ images }: GalleryImagesTableProps) {
                 Preview
               </th>
               <th className="px-6 py-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">
-                Gallery Item
+                Blog Post
               </th>
               <th className="px-6 py-4 text-left text-xs font-medium text-zinc-400 uppercase tracking-wider">
                 Filename

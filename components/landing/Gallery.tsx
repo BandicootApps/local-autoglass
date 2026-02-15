@@ -115,7 +115,7 @@ export function Gallery() {
 
         <div className="text-center reveal delay-200">
           <Link 
-            href="/gallery" 
+            href="/photos" 
             className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-105 border border-white/10"
           >
             <span>View Full Gallery</span>

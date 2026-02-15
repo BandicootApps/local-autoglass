@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     "auto glass",
     "Northern Rivers",
     "Lismore",
+    "Ballina",
+    "Byron Bay",
+    "Alstonville",
+    "Mullumbimby",
+    "Bangalow",
     "windscreen repair",
     "car windscreen",
     "truck windscreen",
@@ -116,15 +121,38 @@ const localBusinessSchema = {
     latitude: -28.8133,
     longitude: 153.2749,
   },
-  areaServed: {
-    "@type": "GeoCircle",
-    geoMidpoint: {
-      "@type": "GeoCoordinates",
-      latitude: -28.8133,
-      longitude: 153.2749,
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Lismore",
+      geo: { "@type": "GeoCoordinates", latitude: -28.8133, longitude: 153.2749 },
     },
-    geoRadius: "100000",
-  },
+    {
+      "@type": "City",
+      name: "Ballina",
+      geo: { "@type": "GeoCoordinates", latitude: -28.8667, longitude: 153.5667 },
+    },
+    {
+      "@type": "City",
+      name: "Byron Bay",
+      geo: { "@type": "GeoCoordinates", latitude: -28.6436, longitude: 153.6150 },
+    },
+    {
+      "@type": "City",
+      name: "Alstonville",
+      geo: { "@type": "GeoCoordinates", latitude: -28.8417, longitude: 153.4417 },
+    },
+    {
+      "@type": "City",
+      name: "Mullumbimby",
+      geo: { "@type": "GeoCoordinates", latitude: -28.5500, longitude: 153.5000 },
+    },
+    {
+      "@type": "City",
+      name: "Bangalow",
+      geo: { "@type": "GeoCoordinates", latitude: -28.6833, longitude: 153.5333 },
+    },
+  ],
   serviceArea: {
     "@type": "AdministrativeArea",
     name: "Northern Rivers, NSW",

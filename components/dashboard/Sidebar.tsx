@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, MessageCircle, HelpCircle, Images, UserCircle, X, LogOut, type LucideIcon } from 'lucide-react';
+import { Home, MessageCircle, HelpCircle, Images, FileText, UserCircle, X, LogOut, type LucideIcon } from 'lucide-react';
 import { Logo } from '@/components/Logo';
 
 interface SidebarProps {
@@ -22,6 +22,7 @@ const navItems: NavItem[] = [
   { name: 'AI Chat', href: '/protected/ai-chat', icon: MessageCircle, comingSoon: true },
   { name: 'FAQ', href: '/protected/faq', icon: HelpCircle },
   { name: 'Gallery', href: '/protected/gallery', icon: Images },
+  { name: 'Blogs', href: '/protected/blogs', icon: FileText },
   { name: 'Accounts', href: '/protected/accounts', icon: UserCircle },
 ];
 
