@@ -1,10 +1,15 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/data/locations';
-import { createClient } from '@/lib/supabase/server';
+import { createClient } from '@supabase/supabase-js';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://localautoglass.com.au';
-  const supabase = await createClient();
+  
+  // Use anonymous client for sitemap - no auth required
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+  );
 
   // Generate location page entries
   const locationPages: MetadataRoute.Sitemap = locations.map((location) => ({
