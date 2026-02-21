@@ -101,7 +101,7 @@ const audiowide = Audiowide({
 // LocalBusiness JSON-LD Schema
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoGlass",
+  "@type": "AutoRepair",
   "@id": `${baseUrl}/#organization`,
   name: "Local Auto Glass",
   alternateName: "Local Autoglass",
