@@ -45,6 +45,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description,
       images: mainImage ? [mainImage] : [],
     },
+    alternates: {
+      canonical: `https://localautoglass.com.au/blog/${id}`,
+    },
   };
 }
 

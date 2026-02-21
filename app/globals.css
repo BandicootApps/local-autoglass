@@ -87,13 +87,14 @@
   background: #9e0e06;
 }
 
-/* Utility for scroll animations */
-.reveal {
+/* Scroll animations: only hide when JS has loaded (via .js-loaded on <html>).
+   Without it, content stays visible — critical for Googlebot indexing. */
+.js-loaded .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.active {
+.js-loaded .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }

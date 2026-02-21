@@ -11,6 +11,14 @@ import { ScrollReveal } from '@/components/landing/ScrollReveal';
 export const metadata: Metadata = {
   title: 'Auto Glass News & Tips | Local Auto Glass Blog',
   description: 'Latest news, tips, and insights about windscreen replacement, ADAS calibration, and auto glass care in the Northern Rivers.',
+  openGraph: {
+    title: 'Auto Glass News & Tips | Local Auto Glass Blog',
+    description: 'Latest news, tips, and insights about windscreen replacement, ADAS calibration, and auto glass care in the Northern Rivers.',
+    url: 'https://localautoglass.com.au/blog',
+  },
+  alternates: {
+    canonical: 'https://localautoglass.com.au/blog',
+  },
 };
 
 function formatDate(dateString: string): string {

@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 
 export function ScrollReveal({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    document.documentElement.classList.add('js-loaded');
+
     const revealElements = document.querySelectorAll('.reveal');
     
     const revealOnScroll = () => {
@@ -18,9 +20,12 @@ export function ScrollReveal({ children }: { children: React.ReactNode }) {
     };
 
     window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial check
+    revealOnScroll();
 
-    return () => window.removeEventListener('scroll', revealOnScroll);
+    return () => {
+      window.removeEventListener('scroll', revealOnScroll);
+      document.documentElement.classList.remove('js-loaded');
+    };
   }, []);
 
   return <>{children}</>;
