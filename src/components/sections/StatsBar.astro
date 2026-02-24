@@ -1,0 +1,61 @@
+<section class="py-12 border-y border-white/5 bg-white/[0.02] backdrop-blur-sm relative z-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 reveal">
+
+      <div class="flex flex-col items-center justify-center text-center">
+        <span class="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums counter" data-target="35">0</span>
+        <span class="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">Years Experience +</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center">
+        <span class="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums counter" data-target="100">0</span>
+        <span class="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">% Mobile Service</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center">
+        <span class="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums counter" data-target="15">0</span>
+        <span class="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">Mins Install Time</span>
+      </div>
+
+      <div class="flex flex-col items-center justify-center text-center">
+        <span class="text-4xl md:text-5xl font-semibold text-brand-500 tracking-tight tabular-nums counter" data-target="1">0</span>
+        <span class="text-xs md:text-sm text-zinc-400 mt-2 uppercase tracking-wide">Local Family</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.target || '0', 10);
+          const duration = 2000;
+          const start = performance.now();
+
+          function animate(currentTime: number) {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target).toString();
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              el.textContent = target.toString();
+            }
+          }
+
+          requestAnimationFrame(animate);
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach((counter) => observer.observe(counter));
+</script>

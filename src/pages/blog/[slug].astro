@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import MobileMenu from '../../components/sections/MobileMenu.astro';
+import Footer from '../../components/sections/Footer.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+import { Image } from 'astro:assets';
+import { blogPosts } from '../../data/blog-posts';
+import type { BlogPost } from '../../data/blog-posts';
+
+export async function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const siteUrl = 'https://localautoglass.com.au';
+const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.subTitle,
+  image: `${siteUrl}/og-image.jpg`,
+  datePublished: `${post.publishedAt}T00:00:00+10:00`,
+  author: {
+    '@type': 'Organization',
+    name: 'Local Auto Glass',
+    url: siteUrl,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Local Auto Glass',
+    url: siteUrl,
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${siteUrl}/blog`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.title,
+      item: canonicalUrl,
+    },
+  ],
+};
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr + 'T00:00:00+10:00');
+  return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+const paragraphs = post.story.split('\n\n').filter(Boolean);
+const galleryImages = post.images.slice(1);
+---
+
+<BaseLayout
+  title={`${post.title} | Local Auto Glass`}
+  description={post.subTitle}
+  canonicalUrl={canonicalUrl}
+  ogImage={post.images[0].src}
+  ogType="article"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="pt-28 pb-4 bg-dark-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="flex items-center gap-2 text-sm text-zinc-500" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-zinc-300 transition-colors">Home</a>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-zinc-700">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+          <a href="/blog" class="hover:text-zinc-300 transition-colors">Blog</a>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-zinc-700">
+            <path d="m9 18 6-6-6-6"/>
+          </svg>
+          <span class="text-zinc-400 truncate max-w-xs">{post.title}</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Post Hero -->
+    <section class="relative h-[60vh] min-h-[400px] overflow-hidden bg-dark-950">
+      <Image
+        src={post.images[0]}
+        alt={post.title}
+        class="w-full h-full object-cover"
+        widths={[800, 1200, 1920]}
+        sizes="100vw"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/60 to-dark-950/20"></div>
+      <div class="absolute bottom-0 left-0 right-0 pb-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+          <time class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">
+            {formatDate(post.publishedAt)}
+          </time>
+          <h1 class="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4 leading-tight">
+            {post.title}
+          </h1>
+          <p class="text-lg text-zinc-300 font-light max-w-2xl">
+            {post.subTitle}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="py-16 md:py-24 bg-dark-950">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="prose-custom space-y-6">
+          {paragraphs.map((paragraph) => (
+            <p class="text-zinc-300 font-light leading-relaxed text-lg">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Gallery -->
+    {galleryImages.length > 0 && (
+      <section class="pb-16 md:pb-24 bg-dark-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+          <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight mb-8">
+            Job <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-red-600">Photos</span>
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {galleryImages.map((img, i) => (
+              <div class="relative rounded-xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src={img}
+                  alt={`${post.title} — photo ${i + 2}`}
+                  class="w-full h-full object-cover"
+                  widths={[400, 800]}
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Back to Blog -->
+    <div class="pb-16 bg-dark-950">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a
+          href="/blog"
+          class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-medium transition-colors group"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:-translate-x-1 transition-transform">
+            <path d="M19 12H5"/>
+            <path d="m12 19-7-7 7-7"/>
+          </svg>
+          <span>Back to Blog</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <FinalCTA />
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import MobileMenu from '../../components/sections/MobileMenu.astro';
+import Footer from '../../components/sections/Footer.astro';
+import { Image } from 'astro:assets';
+
+import carUteImg from '../../assets/local-autoglass-car-ute-windscreen-replacement.jpg';
+import truckImg from '../../assets/local-autoglass-truck-heavy-machinery-windscreen-replacement.jpg';
+import adasImg from '../../assets/local-autoglass-adas-calibration-after-windscreen-replacement.jpg';
+
+const title = 'Our Services | Mobile Windscreen Replacement Northern Rivers';
+const description = 'Professional, on-site windscreen replacement for cars, trucks, tractors, and heavy machinery across the Northern Rivers. We come to you — no workshop visit needed.';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Windscreen Replacement',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Local Auto Glass',
+    telephone: '+61466140195',
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Northern Rivers, NSW',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Windscreen Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Car & Ute Windscreen Replacement',
+          description: 'Mobile windscreen replacement for all makes and models. Australian Standard certified glass.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Trucks, Tractors & Heavy Machinery',
+          description: 'On-site windscreen replacement at your depot, farm, or construction site.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'ADAS Windscreen Calibration',
+          description: 'Professional recalibration of safety camera systems after windscreen replacement.',
+        },
+      },
+    ],
+  },
+};
+
+const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-brand-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>`;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl="https://localautoglass.com.au/services"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Header />
+  <MobileMenu />
+
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Page Header -->
+      <div class="space-y-6 mb-16 text-center reveal">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-xs font-semibold uppercase tracking-wider text-zinc-400 mx-auto">
+          <span>Northern Rivers &amp; Surrounding Areas</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-semibold text-white tracking-tight">
+          Our Services
+        </h1>
+        <p class="text-lg text-zinc-400 font-light max-w-2xl mx-auto">
+          Professional, on-site windscreen replacement for cars, trucks, tractors, and heavy machinery. We come to you — no workshop visit needed.
+        </p>
+      </div>
+
+      <div class="space-y-24 reveal delay-100">
+
+        <!-- Service 1: Cars & Utes -->
+        <div>
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-xs font-semibold uppercase tracking-wider text-brand-400 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                <span>Most Popular</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">
+                Cars &amp; Utes
+              </h2>
+              <p class="text-lg text-zinc-400 font-light leading-relaxed mb-8">
+                We replace windscreens on all makes and models — Toyota, Ford, Mazda, Holden, Hyundai, Kia, and more. Our mobile service comes to your home or workplace, with most jobs done in under two hours using Australian Standard certified glass.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">All Makes &amp; Models</h3>
+                    <p class="text-zinc-400 text-sm font-light">No matter the brand or year.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Certified Glass</h3>
+                    <p class="text-zinc-400 text-sm font-light">Meets Australian Standards and OEM specs.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Fast Turnaround</h3>
+                    <p class="text-zinc-400 text-sm font-light">Done in one to two hours at your location.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src={carUteImg}
+                  alt="Local AutoGlass technician replacing a car windscreen on-site"
+                  class="object-cover w-full h-full"
+                  widths={[400, 800, 1200]}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="eager"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 via-transparent to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- Service 2: Trucks & Heavy Machinery -->
+        <div>
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src={truckImg}
+                  alt="Local AutoGlass replacing a windscreen on a heavy vehicle at a work site"
+                  class="object-cover w-full h-full"
+                  widths={[400, 800, 1200]}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 via-transparent to-transparent"></div>
+              </div>
+            </div>
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+                <span>Commercial &amp; Industrial</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">
+                Trucks, Tractors &amp; Heavy Machinery
+              </h2>
+              <p class="text-lg text-zinc-400 font-light leading-relaxed mb-8">
+                When your gear is off the job, it's costing you money. We provide on-site windscreen replacement at your depot, farm, or construction site — and we work around your schedule, including early starts and weekends.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">On-Site Service</h3>
+                    <p class="text-zinc-400 text-sm font-light">No need to transport heavy equipment.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Flexible Scheduling</h3>
+                    <p class="text-zinc-400 text-sm font-light">Before hours, after hours, or weekends.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Wide Vehicle Range</h3>
+                    <p class="text-zinc-400 text-sm font-light">Trucks, buses, tractors, excavators, forklifts, and more.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- Service 3: ADAS Calibration -->
+        <div>
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="order-2 lg:order-1">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                <span>Advanced Technology</span>
+              </div>
+              <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">
+                ADAS Windscreen Calibration
+              </h2>
+              <p class="text-lg text-zinc-400 font-light leading-relaxed mb-8">
+                Many modern vehicles have cameras and sensors behind the windscreen that control safety features like lane departure warning and automatic emergency braking. After a replacement, these systems need professional recalibration — which we handle on the spot with manufacturer-approved equipment.
+              </p>
+
+              <div class="space-y-4">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Safety Critical</h3>
+                    <p class="text-zinc-400 text-sm font-light">Braking, lane keeping, and cruise control all rely on accurate calibration.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">Professional Equipment</h3>
+                    <p class="text-zinc-400 text-sm font-light">Industry-approved tools meeting manufacturer standards.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                    <Fragment set:html={checkIcon} />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-medium mb-1">No Surprises</h3>
+                    <p class="text-zinc-400 text-sm font-light">If calibration is needed, we'll include it in your quote upfront.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-1 lg:order-2">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src={adasImg}
+                  alt="Local AutoGlass technician performing ADAS calibration after a windscreen replacement"
+                  class="object-cover w-full h-full"
+                  widths={[400, 800, 1200]}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 via-transparent to-transparent"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div>
+          <div class="relative rounded-3xl overflow-hidden py-16 px-8 md:px-16">
+            <div class="absolute inset-0 bg-gradient-to-br from-brand-600 to-brand-500"></div>
+            <div class="absolute inset-0 bg-[url('/local-autoglass-mobile-windscreen-repair-technicians.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+            <div class="relative z-10 text-center">
+              <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4">
+                Ready for a Clear View?
+              </h2>
+              <p class="text-lg text-white/80 font-light max-w-2xl mx-auto mb-8">
+                Call Nigel Swift today for a free, no-obligation quote. We'll come to you anywhere in the Northern Rivers region.
+              </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:0466140195" class="inline-flex items-center gap-3 bg-white hover:bg-zinc-100 text-brand-600 px-8 py-4 rounded-lg text-lg font-bold transition-all shadow-xl transform hover:-translate-y-0.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <span>0466 140 195</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

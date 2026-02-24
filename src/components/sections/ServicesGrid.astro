@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import carsImage from '../../assets/local-autoglass-car-ute-windscreen-replacement.jpg';
+import trucksImage from '../../assets/local-autoglass-truck-heavy-machinery-windscreen-replacement.jpg';
+import adasImage from '../../assets/local-autoglass-adas-calibration-after-windscreen-replacement.jpg';
+
+const services = [
+  {
+    title: 'Cars & Utes',
+    description: 'Windscreen replacement for all makes and models. Sedans, hatchbacks, SUVs, 4WDs, and utes — we cover them all with quality glass and expert fitting.',
+    image: carsImage,
+    alt: 'Local Auto Glass car and ute windscreen replacement service',
+  },
+  {
+    title: 'Trucks & Heavy Machinery',
+    description: 'Specialist windscreen replacement for trucks, tractors, excavators, and heavy machinery. We come to your worksite — no downtime, no delays.',
+    image: trucksImage,
+    alt: 'Local Auto Glass truck and heavy machinery windscreen replacement',
+  },
+  {
+    title: 'ADAS Calibration',
+    description: 'Advanced Driver Assistance System calibration after windscreen replacement. Ensuring your safety systems — lane departure, auto-braking — work correctly.',
+    image: adasImage,
+    alt: 'ADAS calibration after windscreen replacement by Local Auto Glass',
+  },
+];
+---
+
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">What We Do</span>
+      <h2 class="text-4xl md:text-6xl font-bold text-white tracking-tight">
+        Our Services
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      {services.map((service, i) => (
+        <div class={`reveal delay-${(i + 1) * 100} group glass-card rounded-2xl overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300`}>
+          <div class="aspect-[16/10] overflow-hidden">
+            <Image
+              src={service.image}
+              alt={service.alt}
+              width={640}
+              height={400}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">{service.title}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{service.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="/services" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-medium transition-colors group">
+        <span>View All Services</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

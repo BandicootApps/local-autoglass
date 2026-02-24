@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import MobileMenu from '../components/sections/MobileMenu.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import ServicesTicker from '../components/sections/ServicesTicker.astro';
+import WhyChooseUs from '../components/sections/WhyChooseUs.astro';
+import HowItWorks from '../components/sections/HowItWorks.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import StatsBar from '../components/sections/StatsBar.astro';
+import Gallery from '../components/sections/Gallery.astro';
+import FAQSection from '../components/sections/FAQSection.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import ServiceArea from '../components/sections/ServiceArea.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const title = 'Mobile Windscreen Replacement Northern Rivers | Local Auto Glass';
+const description = 'Mobile windscreen replacement for cars, trucks, tractors, and machinery across the Northern Rivers. Call Nigel on 0466 140 195 for a free quote.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl="https://localautoglass.com.au"
+>
+  <Header />
+  <MobileMenu />
+  <main>
+    <HeroSection />
+    <ServicesTicker />
+    <WhyChooseUs />
+    <HowItWorks />
+    <ServicesGrid />
+    <StatsBar />
+    <Gallery />
+    <FAQSection />
+    <Testimonials />
+    <ServiceArea />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

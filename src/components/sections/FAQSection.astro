@@ -1,0 +1,95 @@
+---
+import { featuredFaqs as faqs } from '../../data/faqs';
+import { Image } from 'astro:assets';
+import techniciansImage from '../../assets/local-autoglass-mobile-windscreen-repair-technicians.jpg';
+---
+
+<section class="py-24 relative overflow-hidden" id="faq">
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">FAQ</span>
+      <h2 class="text-4xl md:text-6xl font-bold text-white tracking-tight">
+        Frequently Asked Questions
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-stretch">
+      <!-- Accordion -->
+      <div class="space-y-4 reveal">
+        {faqs.map((faq, i) => (
+          <div class="faq-item rounded-2xl bg-white/[0.03] border border-white/10 overflow-hidden transition-all duration-300">
+            <button
+              class="faq-toggle w-full flex items-center justify-between p-6 text-left group"
+              aria-expanded="false"
+              data-faq-index={i}
+            >
+              <span class="text-base font-semibold text-white pr-4 group-hover:text-brand-400 transition-colors">{faq.question}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-zinc-400 shrink-0 transition-transform duration-300 faq-icon">
+                <path d="M12 5v14"/><path d="M5 12h14"/>
+              </svg>
+            </button>
+            <div class="faq-content max-h-0 overflow-hidden transition-all duration-300">
+              <p class="px-6 pb-6 text-zinc-400 leading-relaxed">{faq.answer}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Image -->
+      <div class="reveal delay-200 hidden lg:flex lg:flex-col">
+        <div class="rounded-2xl overflow-hidden border border-white/10 flex-1">
+          <Image
+            src={techniciansImage}
+            alt="Local Auto Glass mobile windscreen repair technicians"
+            width={640}
+            height={480}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const content = item?.querySelector('.faq-content') as HTMLElement;
+      const icon = item?.querySelector('.faq-icon') as HTMLElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all other items
+      document.querySelectorAll('.faq-item').forEach((otherItem) => {
+        if (otherItem !== item) {
+          const otherContent = otherItem.querySelector('.faq-content') as HTMLElement;
+          const otherIcon = otherItem.querySelector('.faq-icon') as HTMLElement;
+          const otherBtn = otherItem.querySelector('.faq-toggle');
+          if (otherContent) otherContent.style.maxHeight = '0';
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          otherBtn?.setAttribute('aria-expanded', 'false');
+          otherItem.classList.remove('border-brand-500/30');
+          otherItem.classList.add('border-white/10');
+        }
+      });
+
+      // Toggle current item
+      if (isOpen) {
+        content.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+        btn.setAttribute('aria-expanded', 'false');
+        item?.classList.remove('border-brand-500/30');
+        item?.classList.add('border-white/10');
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.style.transform = 'rotate(45deg)';
+        btn.setAttribute('aria-expanded', 'true');
+        item?.classList.add('border-brand-500/30');
+        item?.classList.remove('border-white/10');
+      }
+    });
+  });
+</script>

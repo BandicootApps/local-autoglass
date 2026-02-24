@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets';
+
+// Assorted gallery images
+import assorted0 from '../../assets/gallery/assorted/1771128614212-0.jpg';
+import assorted1 from '../../assets/gallery/assorted/1771128619699-1.jpg';
+import assorted2 from '../../assets/gallery/assorted/1771128627443-2.jpg';
+import assortedTeam from '../../assets/gallery/assorted/local-autoglass-team.png';
+
+// First image from each blog post
+import volvo0 from '../../assets/blog/volvo-truck-windscreen-replacement/1771128469581-0.jpg';
+import vw0 from '../../assets/blog/vintage-volkswagen-karmann-ghia/0-1770431963943.jpg';
+import rav4_0 from '../../assets/blog/toyota-rav4-hail-damage/1771128341914-0.jpg';
+import adas0 from '../../assets/blog/adas-windscreen-calibration/1771128058494-1.jpg';
+import kenworth0 from '../../assets/blog/kenworth-truck-windscreen-replacement/0-1770431340796.jpg';
+import lc0 from '../../assets/blog/toyota-landcruiser-windscreen-replacement/1771128551423-0.jpg';
+import lc1 from '../../assets/blog/toyota-landcruiser-windscreen-replacement/1771128555597-1.jpg';
+
+const galleryImages = [
+  {
+    src: assorted0,
+    alt: 'Mobile windscreen replacement — Local Auto Glass Northern Rivers',
+    span: 'md:col-span-2 md:row-span-2',
+  },
+  {
+    src: volvo0,
+    alt: 'Volvo truck windscreen replacement — Local Auto Glass',
+    span: '',
+  },
+  {
+    src: vw0,
+    alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement — Local Auto Glass',
+    span: '',
+  },
+  {
+    src: rav4_0,
+    alt: 'Toyota RAV4 hail damage windscreen replacement — Local Auto Glass',
+    span: 'md:col-span-2',
+  },
+  {
+    src: adas0,
+    alt: 'ADAS calibration after windscreen replacement — Local Auto Glass',
+    span: '',
+  },
+  {
+    src: kenworth0,
+    alt: 'Kenworth truck windscreen replacement — Local Auto Glass Northern Rivers',
+    span: '',
+  },
+  {
+    src: lc0,
+    alt: 'Toyota LandCruiser mobile windscreen replacement — Local Auto Glass',
+    span: '',
+  },
+  {
+    src: assorted1,
+    alt: 'Local Auto Glass technician at work — Northern Rivers NSW',
+    span: '',
+  },
+  {
+    src: assorted2,
+    alt: 'Windscreen replacement in progress — Local Auto Glass',
+    span: '',
+  },
+  {
+    src: assortedTeam,
+    alt: 'Local Auto Glass team — mobile windscreen replacement Northern Rivers',
+    span: 'md:col-span-2',
+  },
+  {
+    src: lc1,
+    alt: 'Toyota LandCruiser mobile windscreen replacement — Local Auto Glass',
+    span: '',
+  },
+];
+---
+
+<section class="py-24 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/50 to-dark-950"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Our Work</span>
+      <h2 class="text-4xl md:text-6xl font-bold text-white tracking-tight">
+        Recent Work
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-4 reveal">
+      {galleryImages.map((image) => (
+        <div class={`relative rounded-xl overflow-hidden group ${image.span}`}>
+          <Image
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            widths={[400, 800]}
+            sizes="(max-width: 768px) 50vw, 25vw"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-dark-950/40 group-hover:bg-dark-950/20 transition-colors duration-300"></div>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12 reveal">
+      <a href="/photos" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-medium transition-colors group">
+        <span>View Full Gallery</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

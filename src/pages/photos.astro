@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import MobileMenu from '../components/sections/MobileMenu.astro';
+import Footer from '../components/sections/Footer.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import { Image } from 'astro:assets';
+
+// Blog images
+import volvo0 from '../assets/blog/volvo-truck-windscreen-replacement/1771128469581-0.jpg';
+import volvo1 from '../assets/blog/volvo-truck-windscreen-replacement/1771128475356-1.jpg';
+import volvo2 from '../assets/blog/volvo-truck-windscreen-replacement/1771128483150-2.jpg';
+import volvo3 from '../assets/blog/volvo-truck-windscreen-replacement/1771128486668-3.jpg';
+
+import vw0 from '../assets/blog/vintage-volkswagen-karmann-ghia/0-1770431963943.jpg';
+import vw1 from '../assets/blog/vintage-volkswagen-karmann-ghia/1-1770431972983.jpg';
+import vw2 from '../assets/blog/vintage-volkswagen-karmann-ghia/2-1770431988275.jpg';
+import vw3 from '../assets/blog/vintage-volkswagen-karmann-ghia/3-1770432001428.jpg';
+import vw4 from '../assets/blog/vintage-volkswagen-karmann-ghia/4-1770432014502.jpg';
+
+import rav4_0 from '../assets/blog/toyota-rav4-hail-damage/1771128341914-0.jpg';
+import rav4_1 from '../assets/blog/toyota-rav4-hail-damage/1771128348956-1.jpg';
+import rav4_2 from '../assets/blog/toyota-rav4-hail-damage/1771128351924-2.jpg';
+import rav4_3 from '../assets/blog/toyota-rav4-hail-damage/1771128357385-3.png';
+
+import adas0 from '../assets/blog/adas-windscreen-calibration/1771128058494-1.jpg';
+import adas1 from '../assets/blog/adas-windscreen-calibration/1771128067751-2.jpg';
+import adas2 from '../assets/blog/adas-windscreen-calibration/1771128072875-3.jpg';
+import adas3 from '../assets/blog/adas-windscreen-calibration/1771128075866-4.jpg';
+
+import kenworth0 from '../assets/blog/kenworth-truck-windscreen-replacement/0-1770431340796.jpg';
+import kenworth1 from '../assets/blog/kenworth-truck-windscreen-replacement/1-1770431349711.jpg';
+import kenworth2 from '../assets/blog/kenworth-truck-windscreen-replacement/2-1770431360728.jpg';
+import kenworth3 from '../assets/blog/kenworth-truck-windscreen-replacement/3-1770431373161.jpg';
+
+import lc0 from '../assets/blog/toyota-landcruiser-windscreen-replacement/1771128551423-0.jpg';
+import lc1 from '../assets/blog/toyota-landcruiser-windscreen-replacement/1771128555597-1.jpg';
+import lc2 from '../assets/blog/toyota-landcruiser-windscreen-replacement/1771128560229-2.jpg';
+import lc3 from '../assets/blog/toyota-landcruiser-windscreen-replacement/1771128567594-3.jpg';
+
+// Assorted images
+import assorted0 from '../assets/gallery/assorted/1771128614212-0.jpg';
+import assorted1 from '../assets/gallery/assorted/1771128619699-1.jpg';
+import assorted2 from '../assets/gallery/assorted/1771128627443-2.jpg';
+import assortedTeam from '../assets/gallery/assorted/local-autoglass-team.png';
+
+const allImages = [
+  { src: volvo1,       alt: 'Volvo truck windscreen replacement',                          span: 'md:col-span-2 md:row-span-2' },
+  { src: kenworth3,    alt: 'Kenworth truck windscreen replacement',                        span: '' },
+  { src: rav4_0,       alt: 'Toyota RAV4 hail damage windscreen replacement',              span: '' },
+  { src: lc0,          alt: 'Toyota LandCruiser mobile windscreen replacement',            span: '' },
+  { src: adas0,        alt: 'ADAS calibration after windscreen replacement',               span: '' },
+  { src: vw0,          alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement',      span: 'md:col-span-2' },
+  { src: assorted0,    alt: 'Local Auto Glass windscreen job Northern Rivers',             span: '' },
+  { src: assorted1,    alt: 'Local Auto Glass windscreen job Northern Rivers',             span: '' },
+  { src: volvo0,       alt: 'Volvo truck windscreen replacement',                          span: '' },
+  { src: kenworth0,    alt: 'Kenworth truck windscreen replacement',                        span: '' },
+  { src: rav4_1,       alt: 'Toyota RAV4 hail damage windscreen replacement',              span: 'md:col-span-2 md:row-span-2' },
+  { src: lc1,          alt: 'Toyota LandCruiser mobile windscreen replacement',            span: '' },
+  { src: adas1,        alt: 'ADAS calibration after windscreen replacement',               span: '' },
+  { src: vw1,          alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement',      span: '' },
+  { src: assorted2,    alt: 'Local Auto Glass windscreen job Northern Rivers',             span: '' },
+  { src: kenworth1,    alt: 'Kenworth truck windscreen replacement',                        span: 'md:col-span-2' },
+  { src: volvo2,       alt: 'Volvo truck windscreen replacement',                          span: 'md:col-span-2 md:row-span-2' },
+  { src: rav4_2,       alt: 'Toyota RAV4 hail damage windscreen replacement',              span: '' },
+  { src: lc2,          alt: 'Toyota LandCruiser mobile windscreen replacement',            span: '' },
+  { src: adas2,        alt: 'ADAS calibration after windscreen replacement',               span: '' },
+  { src: vw2,          alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement',      span: '' },
+  { src: kenworth2,    alt: 'Kenworth truck windscreen replacement',                        span: '' },
+  { src: assortedTeam, alt: 'Local Auto Glass team Northern Rivers NSW',                   span: 'md:col-span-2' },
+  { src: volvo3,       alt: 'Volvo truck windscreen replacement',                          span: '' },
+  { src: rav4_3,       alt: 'Toyota RAV4 hail damage windscreen replacement',              span: '' },
+  { src: lc3,          alt: 'Toyota LandCruiser mobile windscreen replacement',            span: 'md:col-span-2 md:row-span-2' },
+  { src: adas3,        alt: 'ADAS calibration after windscreen replacement',               span: '' },
+  { src: vw3,          alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement',      span: '' },
+  { src: vw4,          alt: 'Vintage Volkswagen Karmann Ghia windscreen replacement',      span: '' },
+];
+
+const title = 'Gallery | Local Auto Glass — Real Windscreen Jobs';
+const description = 'Browse our gallery of real windscreen replacement and ADAS calibration jobs — trucks, classic cars, hail damage, and more across Northern Rivers NSW.';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl="https://localautoglass.com.au/photos"
+>
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Page Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden bg-dark-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-500/5 via-transparent to-transparent"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal">
+          <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Northern Rivers NSW</span>
+          <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">Our Gallery</h1>
+          <p class="text-lg text-zinc-400 font-light max-w-2xl mx-auto leading-relaxed">
+            Real windscreen replacement jobs from across Northern Rivers NSW. Every photo tells the story of a customer back on the road.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Grid -->
+    <section class="py-16 md:py-24 bg-dark-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-4 reveal">
+          {allImages.map((img, i) => (
+            <div class={`relative rounded-xl overflow-hidden group ${img.span}`}>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                widths={[400, 800]}
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading={i < 4 ? "eager" : "lazy"}
+              />
+              <div class="absolute inset-0 bg-dark-950/40 group-hover:bg-dark-950/20 transition-colors duration-300"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FinalCTA />
+  <Footer />
+</BaseLayout>

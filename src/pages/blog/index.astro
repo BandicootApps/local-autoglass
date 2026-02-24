@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/sections/Header.astro';
+import MobileMenu from '../../components/sections/MobileMenu.astro';
+import Footer from '../../components/sections/Footer.astro';
+import FinalCTA from '../../components/sections/FinalCTA.astro';
+import { Image } from 'astro:assets';
+import { blogPosts } from '../../data/blog-posts';
+
+const title = 'Blog | Local Auto Glass — Windscreen Replacement Stories';
+const description = 'Real windscreen replacement jobs from Local Auto Glass. Trucks, classic cars, hail damage, ADAS calibration — see the work behind the service.';
+
+function formatDate(dateStr: string): string {
+  const date = new Date(dateStr + 'T00:00:00+10:00');
+  return date.toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalUrl="https://localautoglass.com.au/blog"
+>
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Page Hero -->
+    <section class="pt-40 pb-20 relative overflow-hidden bg-dark-950">
+      <div class="absolute inset-0 bg-gradient-to-b from-brand-500/5 via-transparent to-transparent"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="reveal">
+          <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Real Jobs. Real Results.</span>
+          <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6">
+            Our Work
+          </h1>
+          <p class="text-lg text-zinc-400 font-light max-w-2xl mx-auto leading-relaxed">
+            A look behind the windscreen at some of the vehicles we've worked on across Northern Rivers NSW. Real jobs, real customers, real results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post Grid -->
+    <section class="py-16 md:py-24 bg-dark-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+          {blogPosts.map((post) => (
+            <article class="glass-card rounded-2xl overflow-hidden flex flex-col group hover:-translate-y-1 transition-transform duration-300">
+              <a href={`/blog/${post.slug}`} class="block relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={post.images[0]}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  widths={[400, 800]}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 via-transparent to-transparent"></div>
+              </a>
+              <div class="p-6 flex flex-col flex-1">
+                <time class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-3 block">
+                  {formatDate(post.publishedAt)}
+                </time>
+                <h2 class="text-lg font-semibold text-white tracking-tight mb-3 leading-snug">
+                  {post.title}
+                </h2>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed mb-6 flex-1">
+                  {post.subTitle}
+                </p>
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-medium text-sm transition-colors group/link"
+                >
+                  <span>View Job</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform">
+                    <path d="M5 12h14"/>
+                    <path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FinalCTA />
+  <Footer />
+</BaseLayout>
