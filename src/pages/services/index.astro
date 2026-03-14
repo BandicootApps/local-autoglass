@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/sections/Header.astro';
 import MobileMenu from '../../components/sections/MobileMenu.astro';
 import Footer from '../../components/sections/Footer.astro';
+import Breadcrumbs from '../../components/ui/Breadcrumbs.astro';
 import { Image } from 'astro:assets';
 
 import carUteImg from '../../assets/local-autoglass-car-ute-windscreen-replacement.jpg';
@@ -57,6 +58,17 @@ const serviceSchema = {
   },
 };
 
+const siteUrl = 'https://localautoglass.com.au';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+  ],
+};
+
 const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-brand-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>`;
 ---
 
@@ -67,12 +79,19 @@ const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" f
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
 
   <Header />
   <MobileMenu />
 
-  <main class="pt-32 pb-24">
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services' },
+    ]} />
+
+    <div class="pt-8 pb-24">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- Page Header -->
@@ -300,6 +319,7 @@ const checkIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" f
         </div>
 
       </div>
+    </div>
     </div>
   </main>
 

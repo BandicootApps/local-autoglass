@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import MobileMenu from '../components/sections/MobileMenu.astro';
+import Footer from '../components/sections/Footer.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+import Breadcrumbs from '../components/ui/Breadcrumbs.astro';
+import { Image } from 'astro:assets';
+
+import teamPhoto from '../assets/gallery/assorted/local-autoglass-team.png';
+
+const siteUrl = 'https://localautoglass.com.au';
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Nigel Swift',
+  jobTitle: 'Founder & Lead Technician',
+  worksFor: {
+    '@type': 'AutoRepair',
+    '@id': `${siteUrl}/#organization`,
+    name: 'Local Auto Glass',
+  },
+  url: `${siteUrl}/about`,
+  knowsAbout: ['Windscreen replacement', 'Auto glass repair', 'ADAS calibration', 'Mobile automotive services'],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'About', item: `${siteUrl}/about` },
+  ],
+};
+---
+
+<BaseLayout
+  title="About Us — Local Auto Glass | Northern Rivers"
+  description="Meet Nigel Swift and the Local Auto Glass team. Family-owned, 35+ years experience, fully licensed and insured. Mobile windscreen replacement across the Northern Rivers."
+  canonicalUrl="https://localautoglass.com.au/about"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <Breadcrumbs items={[
+      { label: 'Home', href: '/' },
+      { label: 'About' },
+    ]} />
+
+    <!-- Hero -->
+    <section class="pt-8 pb-16 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/60 to-dark-950"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(158,14,6,0.12),transparent_60%)]"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block reveal">Family Owned & Operated</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6 reveal">
+          About Local Auto Glass
+        </h1>
+        <p class="text-lg text-zinc-400 max-w-2xl mx-auto reveal delay-100">
+          We're not a franchise or a call centre. We're a local family business that's been replacing windscreens across the Northern Rivers for over 35 years.
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Photo + Story -->
+    <section class="pb-20 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+          <div class="relative rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
+              src={teamPhoto}
+              alt="The Local Auto Glass team — Nigel Swift and crew on site in the Northern Rivers"
+              class="object-cover w-full h-full"
+              widths={[400, 800, 1200]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/40 via-transparent to-transparent"></div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+              Meet Nigel Swift
+            </h2>
+            <div class="space-y-4 text-zinc-400 font-light leading-relaxed text-lg">
+              <p>
+                Local Auto Glass was founded by Nigel Swift — a qualified auto glass technician with over 35 years of hands-on experience in the trade. Nigel started the business with a simple idea: bring the workshop to the customer, charge a fair price, and do the job right the first time.
+              </p>
+              <p>
+                Based in Lismore, Nigel and his team service the entire Northern Rivers region — from Byron Bay and Ballina on the coast, through to Alstonville, Mullumbimby, Bangalow, Lennox Head, Bentley, and Evans Head. Whether it's a cracked windscreen on a family car, a shattered panel on a Kenworth truck, or an ADAS camera that needs recalibrating after a replacement, Nigel handles it personally.
+              </p>
+              <p>
+                When you call Local Auto Glass, you're not speaking to a receptionist or getting routed through a call centre — you're talking directly to the bloke who's going to do the work. That's the way Nigel likes it, and it's the way his customers prefer it too.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/30 to-dark-950"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+          <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Credentials</span>
+          <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+            Licensed, Insured & Qualified
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal delay-100">
+          <!-- License -->
+          <div class="rounded-2xl bg-white/[0.03] border border-white/10 p-6 text-center">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-400"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2">Licensed</h3>
+            <p class="text-sm text-zinc-400">MVRL63433<br/>MVTC192290</p>
+          </div>
+
+          <!-- Insured -->
+          <div class="rounded-2xl bg-white/[0.03] border border-white/10 p-6 text-center">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-400"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2">Fully Insured</h3>
+            <p class="text-sm text-zinc-400">Public liability &<br/>professional indemnity</p>
+          </div>
+
+          <!-- Experience -->
+          <div class="rounded-2xl bg-white/[0.03] border border-white/10 p-6 text-center">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-400"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2">35+ Years</h3>
+            <p class="text-sm text-zinc-400">Combined experience<br/>in the trade</p>
+          </div>
+
+          <!-- Guarantee -->
+          <div class="rounded-2xl bg-white/[0.03] border border-white/10 p-6 text-center">
+            <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-brand-400"><path d="M12 2 L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+            </div>
+            <h3 class="text-white font-semibold mb-2">Lifetime Guarantee</h3>
+            <p class="text-sm text-zinc-400">On all workmanship<br/>— every job</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Local -->
+    <section class="pb-20 relative">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="reveal space-y-6">
+          <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+            Why Go Local?
+          </h2>
+          <div class="space-y-4 text-zinc-400 font-light leading-relaxed text-lg">
+            <p>
+              The big national windscreen chains have their place, but when you call them you're usually speaking to a call centre interstate. Your job gets scheduled around their priorities, not yours. And the technician who turns up is often a subcontractor you've never met.
+            </p>
+            <p>
+              With Local Auto Glass, you deal with Nigel from start to finish. He answers the phone, gives you the quote, turns up on time, and does the replacement himself. If there's an issue down the track — which is rare — you call the same bloke and he sorts it out. No tickets, no hold music, no runaround.
+            </p>
+            <p>
+              We also offer ADAS calibration as part of the service — something most local competitors can't do. That means your windscreen replacement and camera recalibration happen in one visit, saving you time and the hassle of booking a separate appointment at a dealership.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area Summary -->
+    <section class="pb-20 relative">
+      <div class="max-w-4xl mx-auto px-6 reveal">
+        <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">
+          Where We Service
+        </h2>
+        <p class="text-lg text-zinc-400 font-light leading-relaxed mb-8">
+          We cover the entire Northern Rivers region from our base in Lismore. Our mobile service reaches:
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {[
+            { name: 'Lismore', href: '/services/lismore' },
+            { name: 'Ballina', href: '/services/ballina' },
+            { name: 'Byron Bay', href: '/services/byron-bay' },
+            { name: 'Alstonville', href: '/services/alstonville' },
+            { name: 'Mullumbimby', href: '/services/mullumbimby' },
+            { name: 'Bangalow', href: '/services/bangalow' },
+            { name: 'Lennox Head', href: '/services/lennox-head' },
+            { name: 'Bentley', href: '/services/bentley' },
+            { name: 'Evans Head', href: '/services/evans-head' },
+          ].map((area) => (
+            <a
+              href={area.href}
+              class="rounded-xl bg-white/[0.03] border border-white/10 hover:border-brand-500/30 px-4 py-3 text-sm text-zinc-300 hover:text-brand-400 transition-all text-center"
+            >
+              {area.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <FinalCTA />
+  <Footer />
+</BaseLayout>
