@@ -75,6 +75,10 @@ const localBusinessSchema = {
   "slogan": "Best Price. Best Service.",
   "paymentAccepted": ["Cash", "Credit Card", "EFTPOS"],
   "currenciesAccepted": "AUD",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "07:00", "closes": "17:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" },
+  ],
 };
 ---
 

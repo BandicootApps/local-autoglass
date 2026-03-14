@@ -135,7 +135,7 @@ export const faqs: FAQ[] = [
   {
     category: 'Qualifications',
     question: 'What experience does Local Autoglass have?',
-    answer: 'The team at Local Autoglass has over 20 years of industry experience and is fully qualified to carry out automotive glass replacements safely and professionally.',
+    answer: 'The team at Local Autoglass has over 35 years of industry experience and is fully qualified to carry out automotive glass replacements safely and professionally.',
   },
   {
     category: 'Qualifications',

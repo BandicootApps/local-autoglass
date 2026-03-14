@@ -50,6 +50,7 @@ export interface BlogPost {
   story: string;
   publishedAt: string;
   images: ImageMetadata[];
+  imageAlts: string[];
   relatedLinks: RelatedLink[];
 }
 
@@ -74,6 +75,12 @@ We service all types of heavy vehicles across the Northern Rivers — from deliv
 If your truck has a cracked or damaged windscreen, don't wait until it fails a roadworthy inspection or gets a defect notice. Give us a call on 0466 140 195 for a free quote and we'll get you sorted fast.`,
     publishedAt: '2026-02-07',
     images: [volvo1, volvo0, volvo2, volvo3],
+    imageAlts: [
+      'Volvo truck with new windscreen fitted and ready for the road',
+      'Rock damage across Volvo truck windscreen before replacement',
+      'Technician applying adhesive to Volvo truck windscreen frame',
+      'Completed Volvo truck windscreen replacement from inside cab',
+    ],
     relatedLinks: [
       { label: 'Truck & Heavy Machinery Windscreen Replacement', url: '/services' },
       { label: 'Kenworth Truck Windscreen Replacement', url: '/blog/kenworth-truck-windscreen-replacement' },
@@ -98,6 +105,13 @@ We also see a lot of classic car owners in the Northern Rivers who drive their v
 If you own a classic or vintage vehicle in the Northern Rivers and need a windscreen or window replacement, give us a call. We've handled everything from 1960s Volkswagens to classic Holdens and Fords. We'll source the right glass, come to your home, and fit it properly — no need to trailer the car anywhere.`,
     publishedAt: '2026-02-07',
     images: [vw0, vw1, vw2, vw3, vw4],
+    imageAlts: [
+      'Vintage Volkswagen Karmann Ghia with hazy original windscreen before replacement',
+      'Close-up of worn rubber seal on Karmann Ghia windscreen',
+      'New windscreen being fitted into Karmann Ghia rubber gasket',
+      'Karmann Ghia with crystal clear new windscreen installed',
+      'Completed Volkswagen Karmann Ghia windscreen and window replacement',
+    ],
     relatedLinks: [
       { label: 'Our Services', url: '/services' },
       { label: 'See More of Our Work', url: '/photos' },
@@ -124,6 +138,12 @@ If your vehicle is comprehensively insured, your windscreen replacement is usual
 For those without comprehensive insurance, we offer competitive pricing on all windscreen replacements and can provide a free quote over the phone. Whether your vehicle has been caught in a hail storm or picked up damage from road debris, contact Local Autoglass on 0466 140 195 and we'll get you sorted.`,
     publishedAt: '2026-02-15',
     images: [rav4_0, rav4_1, rav4_2, rav4_3],
+    imageAlts: [
+      'Red Toyota RAV4 with severely hail-damaged shattered windscreen',
+      'Technician removing destroyed hail-damaged windscreen from RAV4',
+      'New windscreen bonded into RAV4 frame with retention tape applied',
+      'Completed Toyota RAV4 windscreen replacement — crystal clear new glass',
+    ],
     relatedLinks: [
       { label: 'Our Services', url: '/services' },
       { label: 'Insurance & Warranty FAQs', url: '/faq' },
@@ -154,6 +174,12 @@ Not every auto glass business offers ADAS calibration — many will replace the 
 If you've recently had a windscreen replaced and aren't sure if your ADAS was recalibrated, or if you've noticed your lane departure warning behaving strangely or your adaptive cruise control not responding as expected, contact Local Autoglass on 0466 140 195 for a professional calibration you can trust.`,
     publishedAt: '2026-02-15',
     images: [adas0, adas1, adas2, adas3],
+    imageAlts: [
+      'ADAS calibration target board positioned in front of vehicle windscreen',
+      'Technician connecting calibration equipment to vehicle onboard computer',
+      'ADAS camera mounted behind new windscreen being recalibrated',
+      'Completed ADAS calibration with equipment displaying successful alignment',
+    ],
     relatedLinks: [
       { label: 'Our Services — ADAS Calibration', url: '/services' },
       { label: 'ADAS Calibration FAQs', url: '/faq' },
@@ -184,6 +210,12 @@ For fleet operators running multiple trucks across the Northern Rivers, we offer
 If your truck is showing signs of stress cracks or edge fractures, give us a call on 0466 140 195 for a free quote. We service all truck makes and models across the Northern Rivers, from Kenworth and Mack to Isuzu, Hino, Fuso, and more.`,
     publishedAt: '2026-02-15',
     images: [kenworth3, kenworth0, kenworth1, kenworth2],
+    imageAlts: [
+      'White Kenworth cabover truck with visible stress fractures across windscreen',
+      'Technician using suction cup lifters to remove damaged Kenworth windscreen panel',
+      'New glass panel being positioned on Kenworth truck windscreen frame',
+      'Completed Kenworth truck windscreen replacement with clear crack-free glass',
+    ],
     relatedLinks: [
       { label: 'Truck & Heavy Machinery Windscreen Replacement', url: '/services' },
       { label: 'Volvo Truck Windscreen Replacement', url: '/blog/volvo-truck-windscreen-replacement' },
@@ -212,6 +244,12 @@ We also see a lot of LandCruiser owners who are upgrading or restoring older mod
 If your windscreen is looking worse for wear from years on dirt roads, or if you've picked up a crack or chip from road debris, contact Local Autoglass on 0466 140 195. We service the entire Northern Rivers region — Lismore, Ballina, Byron Bay, Alstonville, Mullumbimby, Bangalow, Lennox Head, Bentley, Evans Head, and everywhere in between.`,
     publishedAt: '2026-02-15',
     images: [lc0, lc1, lc2, lc3],
+    imageAlts: [
+      'White Toyota LandCruiser ute with cloudy sandblasted windscreen before replacement',
+      'Technician removing worn windscreen from LandCruiser on rural property',
+      'Suction cup lifters positioning new windscreen on LandCruiser frame',
+      'Completed LandCruiser mobile windscreen replacement — clear new glass fitted on-site',
+    ],
     relatedLinks: [
       { label: 'Our Services', url: '/services' },
       { label: 'See More of Our Work', url: '/photos' },

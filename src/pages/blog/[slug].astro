@@ -27,7 +27,7 @@ const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
 
 const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
   headline: post.title,
   description: post.subTitle,
   image: `${siteUrl}/og-image.jpg`,
@@ -117,7 +117,7 @@ const galleryImages = post.images.slice(1);
     <section class="relative h-[60vh] min-h-[400px] overflow-hidden bg-dark-950">
       <Image
         src={post.images[0]}
-        alt={post.title}
+        alt={post.imageAlts[0] || post.title}
         class="w-full h-full object-cover"
         widths={[800, 1200, 1920]}
         sizes="100vw"
@@ -164,7 +164,7 @@ const galleryImages = post.images.slice(1);
               <div class="relative rounded-xl overflow-hidden aspect-[4/3]">
                 <Image
                   src={img}
-                  alt={`${post.title} — photo ${i + 2}`}
+                  alt={post.imageAlts[i + 1] || `${post.title} — photo ${i + 2}`}
                   class="w-full h-full object-cover"
                   widths={[400, 800]}
                   sizes="(max-width: 640px) 100vw, 50vw"
