@@ -23,7 +23,7 @@ const fullOgImage = new URL(ogImage, siteUrl).href;
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": ["AutoRepair", "LocalBusiness"],
   "@id": `${siteUrl}/#organization`,
   "name": "Local Auto Glass",
   "alternateName": "Local Autoglass",
@@ -33,8 +33,10 @@ const localBusinessSchema = {
   "email": "local.autoglass.nr@gmail.com",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "274 Magellan St",
     "addressLocality": "Lismore",
     "addressRegion": "NSW",
+    "postalCode": "2480",
     "addressCountry": "AU",
   },
   "geo": {
@@ -81,6 +83,23 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00" },
   ],
 };
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "url": siteUrl,
+  "name": "Local Auto Glass",
+  "description": "Mobile windscreen replacement for cars, trucks, tractors, and machinery across the Northern Rivers.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/?s={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
 ---
 
 <!DOCTYPE html>
@@ -121,6 +140,7 @@ const localBusinessSchema = {
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
 
     <slot name="head" />
   </head>
