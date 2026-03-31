@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import MobileMenu from '../components/sections/MobileMenu.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const siteUrl = 'https://localautoglass.com.au';
+const effectiveDate = '31 March 2026';
+const legalEntityName = 'Local Auto Glass';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Terms and Conditions', item: `${siteUrl}/terms-and-conditions` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Terms and Conditions — Local Auto Glass"
+  description="Terms and Conditions for Local Auto Glass mobile windscreen replacement services in Northern Rivers, NSW. Read before using our services."
+  canonicalUrl="https://localautoglass.com.au/terms-and-conditions"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-12 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/60 to-dark-950"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(158,14,6,0.10),transparent_60%)]"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6">
+        <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Legal</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+          Terms and Conditions
+        </h1>
+        <p class="text-zinc-500 text-sm">
+          Effective Date: {effectiveDate} &nbsp;|&nbsp; Last Updated: {effectiveDate}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="max-w-4xl mx-auto px-6 space-y-12">
+
+        <!-- 1. Introduction -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">1. Introduction</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            These Terms and Conditions ("Terms") govern your access to and use of the website at <a href="https://localautoglass.com.au" class="text-brand-400 hover:underline">localautoglass.com.au</a> ("the Website") and the services provided by <strong class="text-zinc-200">{legalEntityName}</strong> ("we", "us", "our"), a mobile windscreen replacement and ADAS calibration business based in Lismore, New South Wales, Australia.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            By accessing the Website or engaging our services, you agree to be bound by these Terms. If you do not agree to these Terms, you must not use the Website or engage our services. We reserve the right to amend these Terms at any time by publishing the updated version on the Website.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            These Terms are governed by, and are to be construed in accordance with, the laws of New South Wales, Australia.
+          </p>
+        </div>
+
+        <!-- 2. Services -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">2. Services</h2>
+          <p class="text-zinc-400 leading-relaxed">We provide the following mobile services:</p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li>Windscreen replacement for cars, utes, trucks, and heavy machinery;</li>
+            <li>Auto glass repair and replacement;</li>
+            <li>Advanced Driver Assistance System (ADAS) calibration following windscreen replacement.</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            Our services are delivered on-site within the Northern Rivers region of New South Wales, including Lismore, Ballina, Byron Bay, Alstonville, Mullumbimby, Bangalow, Lennox Head, Bentley, Evans Head, and surrounding areas. We reserve the right to decline to provide services at any location, or to any customer, at our absolute discretion.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            All services are subject to availability of parts and scheduling capacity. We are not liable for any loss arising from delays in the supply of parts or from circumstances beyond our reasonable control.
+          </p>
+        </div>
+
+        <!-- 3. Quotes and Pricing -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">3. Quotes and Pricing</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            All quotes provided by us — whether by telephone, email, or any other means — are estimates only and are not binding offers. Quotes are based on information provided by you and are subject to change upon physical inspection of the vehicle or equipment.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            The final price for services will be confirmed with you prior to commencement of work. We are not bound by any verbal estimate provided prior to vehicle inspection.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            All prices are quoted in Australian Dollars (AUD) and include Goods and Services Tax (GST) where applicable.
+          </p>
+        </div>
+
+        <!-- 4. ADAS Calibration Disclaimer -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">4. ADAS Calibration — Important Disclaimer</h2>
+          <div class="rounded-xl bg-brand-500/5 border border-brand-500/20 p-6 space-y-3">
+            <p class="text-zinc-300 font-medium">Please read this section carefully before engaging our ADAS calibration service.</p>
+          </div>
+          <p class="text-zinc-400 leading-relaxed">
+            ADAS calibration is performed using manufacturer-approved equipment and procedures in accordance with vehicle manufacturer specifications. The accuracy and effectiveness of ADAS calibration is dependent on, and may be affected by, the following factors:
+          </p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li>The accuracy and completeness of information provided by you regarding the vehicle, including tyre size, tyre condition, and tyre pressure;</li>
+            <li>The alignment and suspension condition of the vehicle;</li>
+            <li>Any pre-existing modifications to the vehicle's steering, suspension, or camera mounting systems;</li>
+            <li>Environmental conditions at the time of calibration;</li>
+            <li>Any vehicle defects or damage unrelated to the windscreen replacement.</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            We do not accept liability for ADAS system malfunction, inaccuracy, or failure caused by pre-existing vehicle conditions, modifications, or factors beyond our reasonable control. ADAS systems are safety-critical components of your vehicle. If you have any uncertainty regarding the performance of your ADAS systems following calibration, we strongly recommend that you seek an independent inspection by a qualified automotive technician or your vehicle's manufacturer or authorised dealer before relying on those systems.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            By engaging our ADAS calibration service, you acknowledge and accept the matters set out in this clause 4.
+          </p>
+        </div>
+
+        <!-- 5. Workmanship Guarantee -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">5. Workmanship Guarantee</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We provide a lifetime guarantee on the workmanship of our windscreen installation services ("Guarantee"). The Guarantee applies to defects in the installation itself (including seal integrity and fitting quality) and is subject to the following conditions and exclusions:
+          </p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li>The Guarantee does not cover damage to the glass caused by road debris, stone chips, impacts, accidents, or other physical damage after installation;</li>
+            <li>The Guarantee does not cover damage caused by third-party interference with the installation;</li>
+            <li>The Guarantee does not cover consequential damage arising from pre-existing vehicle defects;</li>
+            <li>The Guarantee is personal to the original customer and is not transferable to subsequent owners of the vehicle.</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            To make a claim under the Guarantee, please contact us directly using the details below. This Guarantee is in addition to, and does not limit, your rights under the Australian Consumer Law.
+          </p>
+        </div>
+
+        <!-- 6. Payment -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">6. Payment</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We accept payment by cash, credit card, and EFTPOS. Payment is due in full upon completion of the service unless otherwise agreed in writing prior to commencement of work.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            In the event of a failed or dishonoured payment, we reserve the right to charge an administration fee in addition to any bank or processing fees incurred. Outstanding amounts may be referred to a debt collection agency and you may be liable for all costs of recovery, including legal costs on a solicitor-client basis.
+          </p>
+        </div>
+
+        <!-- 7. Cancellation and No-Show Policy -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">7. Cancellation and No-Show Policy</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We appreciate reasonable notice if you need to cancel or reschedule a booked appointment. Cancellations can be made by telephone or email using the contact details below.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            Where you fail to be present at the agreed service location at the agreed time without prior notice ("no-show"), or where you cancel without reasonable notice, we reserve the right to charge a call-out fee to cover travel and time costs incurred. Any such fee will be communicated to you in advance where practicable.
+          </p>
+        </div>
+
+        <!-- 8. Limitation of Liability -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">8. Limitation of Liability</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            To the maximum extent permitted by applicable law, including the Australian Consumer Law, our total aggregate liability to you for any loss, damage, or claim arising out of or in connection with these Terms or the provision of our services (whether in contract, tort, including negligence, statute, or otherwise) is limited to:
+          </p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li>the re-supply of the relevant service; or</li>
+            <li>the refund of the amount paid by you for the relevant service,</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            at our election.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            To the maximum extent permitted by law, we exclude all liability for indirect, consequential, special, incidental, or punitive loss or damage, including loss of profits, loss of revenue, loss of data, or loss of use, arising out of or in connection with these Terms or our services, regardless of whether such loss was foreseeable or we had been advised of the possibility of such loss.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            Nothing in these Terms limits or excludes our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be excluded or limited under applicable law.
+          </p>
+        </div>
+
+        <!-- 9. Consumer Guarantees under the ACL -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">9. Australian Consumer Law — Consumer Guarantees</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            Our services come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the services remedied if the services fail to be of acceptable quality and the failure does not amount to a major failure.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            Nothing in these Terms is intended to exclude, restrict, or modify any right or remedy you may have under the Australian Consumer Law. Any provision of these Terms that is inconsistent with the Australian Consumer Law is void to the extent of that inconsistency.
+          </p>
+        </div>
+
+        <!-- 10. Intellectual Property -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">10. Intellectual Property</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            All content on the Website, including but not limited to text, images, photographs, logos, graphics, and the Website's overall design and layout ("Content"), is owned by or licensed to us and is protected by Australian and international intellectual property laws.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            You may access and use the Website for personal, non-commercial purposes only. You must not reproduce, distribute, modify, create derivative works from, publicly display, or otherwise use any Content without our prior written consent.
+          </p>
+        </div>
+
+        <!-- 11. Website Use -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">11. Website Use</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We make no warranty or representation that the Website will be available, uninterrupted, error-free, or free from viruses or other harmful components. We reserve the right to suspend, modify, or discontinue the Website at any time without notice.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            The Website may contain links to third-party websites. Such links are provided for your convenience only. We do not endorse, control, or take responsibility for the content, privacy practices, or availability of any third-party website. Your use of any third-party website is at your own risk.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            You must not use the Website in any manner that is unlawful, harmful, or that could damage, disable, or impair the Website or interfere with any other party's use of it.
+          </p>
+        </div>
+
+        <!-- 12. Governing Law and Jurisdiction -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">12. Governing Law and Jurisdiction</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            These Terms are governed by and construed in accordance with the laws of New South Wales, Australia. You irrevocably submit to the non-exclusive jurisdiction of the courts of New South Wales and the Federal Court of Australia for the resolution of any dispute arising out of or in connection with these Terms or our services.
+          </p>
+        </div>
+
+        <!-- 13. Dispute Resolution -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">13. Dispute Resolution</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            Before commencing any legal proceedings, you must first contact us in writing to notify us of the nature of the dispute and your desired resolution. We will endeavour to resolve the dispute with you in good faith within 30 days of receipt of your written notice.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            If we are unable to resolve the dispute within that period, either party may seek resolution through the relevant consumer tribunal, fair trading authority, or courts of New South Wales.
+          </p>
+        </div>
+
+        <!-- 14. Changes to These Terms -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">14. Changes to These Terms</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We may amend these Terms at any time by publishing the updated version on the Website with a revised effective date. It is your responsibility to review these Terms periodically. Your continued use of the Website or our services following any amendment constitutes your acceptance of the amended Terms.
+          </p>
+        </div>
+
+        <!-- 15. Contact Us -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">15. Contact Us</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            For any enquiries regarding these Terms and Conditions, please contact us:
+          </p>
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-6 space-y-3 text-sm text-zinc-400">
+            <p><strong class="text-zinc-200">Local Auto Glass</strong></p>
+            <p>{legalEntityName}</p>
+            <p>Lismore, NSW 2480</p>
+            <p>
+              Phone: <a href="tel:0466140195" class="text-brand-400 hover:underline">0466 140 195</a>
+            </p>
+            <p>
+              Email: <a href="mailto:local.autoglass.nr@gmail.com" class="text-brand-400 hover:underline">local.autoglass.nr@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

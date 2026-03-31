@@ -422,6 +422,57 @@ export const locations: Location[] = [
     ],
   },
   {
+    slug: 'casino',
+    name: 'Casino',
+    population: '10,000–11,000',
+    description:
+      "Casino is the beef capital of Australia — a hard-working regional hub where cattle trucks, farm machinery, and commercial vehicles are part of everyday life. We bring our mobile windscreen replacement service directly to your Casino property, depot, or work site. No downtime, no workshop trip, no hassle.",
+    latitude: -28.8666,
+    longitude: 153.0507,
+    nearbyLocations: ['lismore', 'bentley', 'alstonville'],
+    region: 'Northern Rivers',
+    distanceFromBase: '30 min from Lismore',
+    tagline: "Beef capital of Australia — we service the whole region",
+    whyChooseUs:
+      "Casino runs on heavy vehicles. Cattle trucks, grain carriers, farm machinery, and commercial utes are out on the roads and paddocks every single day — and in that environment, a cracked windscreen isn't just inconvenient, it can take a working vehicle off the road entirely. We understand how Casino operates. We come to your depot, your property, or wherever the vehicle is sitting, and we get it sorted on the spot. No need to drive into Lismore. No lost half-days. Just professional, reliable mobile service from a technician who knows the Northern Rivers.",
+    suburbs: [
+      'Casino CBD',
+      'North Casino',
+      'South Casino',
+      'Coraki',
+      'Rappville',
+      'Leeville',
+      'Mummulgum',
+      'Dyraaba',
+      'Greenridge',
+    ],
+    services: {
+      carsUtes:
+        "Whether you've copped a rock chip on the Bruxner Highway or a crack has spread on the back roads between Casino and Kyogle, we come to your Casino address and fix it on the spot. No need to drive to Lismore with an unsafe windscreen — we bring everything we need to you, whether you're at home, at work, or out on the property.",
+      trucksHeavy:
+        "Casino is the beef capital of Australia — and that means cattle trucks, stock carriers, grain wagons, and heavy farm machinery are everywhere. Windscreen damage is part of the job. We specialise in on-site replacement for heavy vehicles and working machinery, coming directly to your Casino depot, saleyards, or farm so your trucks stay operational and your livestock schedule stays on track.",
+      adas:
+        "Modern trucks and vehicles running between Casino, Lismore, and Grafton rely on ADAS safety systems for long highway stretches. After every windscreen replacement, we perform full on-site ADAS calibration using manufacturer-approved equipment — so your forward collision warning and lane assist are dialled in for the New England Highway and beyond.",
+    },
+    faqs: [
+      {
+        question: 'Can you replace a windscreen on a cattle truck in Casino?',
+        answer:
+          "Yes — cattle trucks and heavy commercial vehicles are our specialty in Casino. We come directly to your depot, property, or saleyards with all the equipment needed to replace the windscreen on-site. No need to take the truck off the road for longer than necessary. Call 0466 140 195 with your vehicle details for a quick quote.",
+      },
+      {
+        question: 'Do you service rural properties and farms around Casino?',
+        answer:
+          "Absolutely. We service the Casino region including Coraki, Rappville, Leeville, Mummulgum, Dyraaba, and surrounding rural properties. Whether your vehicle is in the paddock or at a depot, we come to you — unsealed roads are no problem.",
+      },
+      {
+        question: 'How far is Casino from your Lismore base?',
+        answer:
+          "Casino is about 30 minutes from our Lismore base via the Bruxner Highway. There's no extra charge for our mobile service to Casino — you pay the same competitive price as anywhere else in our service area. Same-day and next-day appointments are usually available.",
+      },
+    ],
+  },
+  {
     slug: 'evans-head',
     name: 'Evans Head',
     population: '3,000–3,500',

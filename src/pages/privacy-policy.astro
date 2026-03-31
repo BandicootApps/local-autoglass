@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/sections/Header.astro';
+import MobileMenu from '../components/sections/MobileMenu.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const siteUrl = 'https://localautoglass.com.au';
+const effectiveDate = '31 March 2026';
+const legalEntityName = 'Local Auto Glass';
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: `${siteUrl}/privacy-policy` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Privacy Policy — Local Auto Glass"
+  description="Privacy Policy for Local Auto Glass. Learn how we collect, use, and protect your personal information in accordance with the Australian Privacy Act 1988."
+  canonicalUrl="https://localautoglass.com.au/privacy-policy"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero -->
+    <section class="pt-32 pb-12 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-dark-950 via-dark-900/60 to-dark-950"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(158,14,6,0.10),transparent_60%)]"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6">
+        <span class="text-xs font-semibold tracking-widest text-brand-400 uppercase mb-4 block">Legal</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+          Privacy Policy
+        </h1>
+        <p class="text-zinc-500 text-sm">
+          Effective Date: {effectiveDate} &nbsp;|&nbsp; Last Updated: {effectiveDate}
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="pb-24">
+      <div class="max-w-4xl mx-auto px-6 space-y-12">
+
+        <!-- 1. Introduction -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">1. Introduction</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            <strong class="text-zinc-200">{legalEntityName}</strong> ("we", "us", "our") is committed to protecting the privacy of individuals in accordance with the <em>Privacy Act 1988</em> (Cth) and the Australian Privacy Principles (APPs) contained in Schedule 1 of that Act.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            This Privacy Policy describes how we collect, hold, use, and disclose personal information, and how you may access and seek correction of that information. By using our website at <a href="https://localautoglass.com.au" class="text-brand-400 hover:underline">localautoglass.com.au</a> ("the Website") or engaging our services, you consent to the practices described in this Privacy Policy.
+          </p>
+        </div>
+
+        <!-- 2. What Personal Information We Collect -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">2. What Personal Information We Collect</h2>
+          <p class="text-zinc-400 leading-relaxed">We may collect and hold the following categories of personal information:</p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li><strong class="text-zinc-200">Identity and contact information:</strong> your name, telephone number, and email address;</li>
+            <li><strong class="text-zinc-200">Vehicle information:</strong> vehicle make, model, year of manufacture, and Vehicle Identification Number (VIN) where relevant to your service enquiry;</li>
+            <li><strong class="text-zinc-200">Location information:</strong> the service address at which you request us to attend;</li>
+            <li><strong class="text-zinc-200">Communications:</strong> records of telephone calls, emails, and enquiries you submit to us;</li>
+            <li><strong class="text-zinc-200">Usage data:</strong> IP address, browser type, device type, operating system, referring URLs, pages visited on the Website, and time and date of visits, collected automatically by analytics tools.</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            We only collect personal information that is reasonably necessary for the purposes described in this Privacy Policy. We do not collect sensitive information (as defined under the Privacy Act) unless you voluntarily provide it and consent to its collection.
+          </p>
+        </div>
+
+        <!-- 3. How We Collect Personal Information -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">3. How We Collect Personal Information</h2>
+          <p class="text-zinc-400 leading-relaxed">We collect personal information in the following ways:</p>
+
+          <h3 class="text-lg font-semibold text-zinc-200 mt-4">3.1 Directly from You</h3>
+          <p class="text-zinc-400 leading-relaxed">
+            When you contact us by telephone, email, or via any contact form on the Website to request a quote, book a service, or make a general enquiry, you provide personal information directly to us.
+          </p>
+
+          <h3 class="text-lg font-semibold text-zinc-200 mt-4">3.2 Automatically via the Website</h3>
+          <p class="text-zinc-400 leading-relaxed">
+            When you visit the Website, certain usage data is collected automatically through analytics technologies (see sections 6 and 7 below). This includes data collected via cookies placed on your device. You may disable cookies through your browser settings, however some functionality of the Website may be affected.
+          </p>
+        </div>
+
+        <!-- 4. Why We Collect Personal Information -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">4. Purpose of Collection</h2>
+          <p class="text-zinc-400 leading-relaxed">We collect, hold, use, and disclose personal information for the following purposes:</p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li>To respond to your enquiries and provide you with quotes for our services;</li>
+            <li>To book, schedule, and deliver windscreen replacement and ADAS calibration services;</li>
+            <li>To communicate with you before, during, and after the provision of services;</li>
+            <li>To process payments for services rendered;</li>
+            <li>To analyse and improve the performance and content of the Website;</li>
+            <li>To display relevant advertising to you on third-party platforms (where you have not opted out);</li>
+            <li>To comply with our legal and regulatory obligations;</li>
+            <li>For any other purpose for which you have provided consent.</li>
+          </ul>
+          <p class="text-zinc-400 leading-relaxed">
+            We will not use or disclose your personal information for a purpose other than the primary purpose for which it was collected, unless you consent or an exception under the Privacy Act applies.
+          </p>
+        </div>
+
+        <!-- 5. Disclosure of Personal Information -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">5. Disclosure of Personal Information</h2>
+          <p class="text-zinc-400 leading-relaxed">We do not sell, rent, or trade your personal information to third parties.</p>
+          <p class="text-zinc-400 leading-relaxed">We may disclose your personal information to the following categories of third parties where necessary to fulfil the purposes described in this Privacy Policy:</p>
+          <ul class="list-disc list-inside text-zinc-400 leading-relaxed space-y-2 pl-2">
+            <li><strong class="text-zinc-200">Analytics providers:</strong> Google LLC (Google Analytics) — see section 6;</li>
+            <li><strong class="text-zinc-200">Advertising platforms:</strong> Meta Platforms, Inc. (Facebook/Instagram Pixel) — see section 7;</li>
+            <li><strong class="text-zinc-200">Hosting and infrastructure providers:</strong> Vercel Inc. (website hosting);</li>
+            <li><strong class="text-zinc-200">Law enforcement or regulatory bodies:</strong> where required or authorised by law.</li>
+          </ul>
+
+          <h3 class="text-lg font-semibold text-zinc-200 mt-4">5.1 Cross-Border Disclosure (APP 8)</h3>
+          <p class="text-zinc-400 leading-relaxed">
+            Some of the third parties listed above (including Google LLC, Meta Platforms, Inc., and Vercel Inc.) are located or store data outside of Australia, including in the United States of America. By using the Website, you consent to your personal information being disclosed to overseas recipients. We take reasonable steps to ensure that such recipients handle your personal information in a manner consistent with the APPs, however we are not liable for any failure by an overseas recipient to comply with the APPs.
+          </p>
+        </div>
+
+        <!-- 6. Google Analytics -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">6. Google Analytics</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            The Website may use Google Analytics, a web analytics service provided by Google LLC. Google Analytics uses cookies and similar technologies to collect and analyse information about how visitors use the Website, including pages viewed, time on site, and traffic sources. This data is transmitted to and stored by Google on servers in the United States.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            Google may also transfer this information to third parties where required by law, or where such third parties process the information on Google's behalf. By using the Website, you consent to the processing of your data by Google in the manner and for the purposes described in Google's Privacy Policy.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            You may opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">Google Analytics Opt-Out Browser Add-on</a> or by adjusting your browser's cookie settings.
+          </p>
+        </div>
+
+        <!-- 7. Meta Pixel -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">7. Meta (Facebook) Pixel</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            The Website may use the Meta Pixel, an analytics and advertising tool provided by Meta Platforms, Inc. The Meta Pixel allows us to measure the effectiveness of our advertising on Facebook and Instagram, and to display targeted advertisements to users who have previously visited the Website (remarketing).
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            When you visit the Website, the Meta Pixel may collect data including your IP address, browser information, and pages visited. This data is transmitted to and stored by Meta on servers that may be located outside of Australia.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            You may opt out of targeted advertising by visiting your <a href="https://www.facebook.com/settings/?tab=ads" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">Facebook Ad Settings</a> or by using the <a href="https://optout.aboutads.info/" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">Digital Advertising Alliance's opt-out tool</a>.
+          </p>
+        </div>
+
+        <!-- 8. Cookies -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">8. Cookies</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            Cookies are small text files placed on your device by websites you visit. The Website may use cookies to enable certain functionality and to support analytics and advertising tools described in sections 6 and 7 above. Cookies placed by third-party services are governed by the privacy policies of those third parties.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            You may disable or delete cookies through your browser settings. Please note that disabling cookies may affect the functionality of certain features of the Website. Instructions for managing cookies in common browsers are available from your browser provider.
+          </p>
+        </div>
+
+        <!-- 9. Security -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">9. Security of Personal Information</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We take reasonable steps to protect the personal information we hold from misuse, interference, and loss, and from unauthorised access, modification, or disclosure. These steps include physical, electronic, and administrative safeguards appropriate to the nature and sensitivity of the information.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            However, no method of transmission over the internet or method of electronic storage is completely secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. In the event of a data breach that is likely to result in serious harm, we will notify affected individuals and the Office of the Australian Information Commissioner (OAIC) in accordance with the Notifiable Data Breaches scheme under the Privacy Act.
+          </p>
+        </div>
+
+        <!-- 10. Access and Correction -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">10. Access to and Correction of Personal Information</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            Under APP 12, you have the right to request access to personal information we hold about you. Under APP 13, you have the right to request that we correct personal information that is inaccurate, out of date, incomplete, irrelevant, or misleading.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            To make an access or correction request, please contact us using the details in section 13 below. We will respond to your request within a reasonable time (generally 30 days). We may be required to verify your identity before providing access. In some circumstances, we may be permitted or required to refuse an access or correction request under the Privacy Act, in which case we will provide written reasons for the refusal.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            We do not charge a fee for making an access request, however we may charge a reasonable fee to cover the cost of providing access to the information.
+          </p>
+        </div>
+
+        <!-- 11. Complaints -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">11. Privacy Complaints</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            If you believe we have breached the APPs or otherwise mishandled your personal information, you may lodge a complaint with us using the contact details in section 13 below. We will acknowledge your complaint within 5 business days and endeavour to resolve it within 30 days. We will keep you informed of the progress of your complaint.
+          </p>
+          <p class="text-zinc-400 leading-relaxed">
+            If you are not satisfied with our response, or if we fail to respond within 30 days, you may lodge a complaint with the Office of the Australian Information Commissioner (OAIC):
+          </p>
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-6 space-y-2 text-sm text-zinc-400">
+            <p><strong class="text-zinc-200">Office of the Australian Information Commissioner (OAIC)</strong></p>
+            <p>GPO Box 5218, Sydney NSW 2001</p>
+            <p>Phone: 1300 363 992</p>
+            <p>Website: <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" class="text-brand-400 hover:underline">www.oaic.gov.au</a></p>
+          </div>
+        </div>
+
+        <!-- 12. Changes to This Policy -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">12. Changes to This Privacy Policy</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. The current version will always be published on this page with a revised effective date. We encourage you to review this Privacy Policy periodically. Your continued use of the Website following any update constitutes your acceptance of the revised Privacy Policy.
+          </p>
+        </div>
+
+        <!-- 13. Contact Us -->
+        <div class="space-y-4">
+          <h2 class="text-2xl font-semibold text-white border-b border-white/10 pb-3">13. Contact Us</h2>
+          <p class="text-zinc-400 leading-relaxed">
+            For all privacy enquiries, access requests, correction requests, or complaints, please contact us:
+          </p>
+          <div class="rounded-xl bg-white/[0.03] border border-white/10 p-6 space-y-3 text-sm text-zinc-400">
+            <p><strong class="text-zinc-200">Local Auto Glass</strong></p>
+            <p>{legalEntityName}</p>
+            <p>Lismore, NSW 2480</p>
+            <p>
+              Phone: <a href="tel:0466140195" class="text-brand-400 hover:underline">0466 140 195</a>
+            </p>
+            <p>
+              Email: <a href="mailto:local.autoglass.nr@gmail.com" class="text-brand-400 hover:underline">local.autoglass.nr@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
